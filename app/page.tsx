@@ -1,34 +1,28 @@
 import React from "react";
-import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import SocialProof from "@/components/SocialProof";
-import WhyMvpsFail from "@/components/WhyMvpsFail";
-import DifferentApproach from "@/components/DifferentApproach";
+import Approach from "@/components/Approach";
 import TechStack from "@/components/TechStack";
 import RecentWork from "@/components/RecentWork";
-import Testimonials from "@/components/Testimonials";
+import RecentProjects from "@/components/RecentProjects";
+import DifferentApproach from "@/components/DifferentApproach";
+import Clients from "@/components/Clients";
 import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
+import SocialProof from "@/components/SocialProof";
 
 export default function RedesignedLandingPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-[#0B57D0] selection:text-white">
-      <Navbar />
-      
       <div className="relative">
         <HeroSection />
-        <SocialProof />
-        <WhyMvpsFail />
-        <DifferentApproach />
+        <Approach />
         <TechStack />
         <RecentWork />
-        <Testimonials />
+        <RecentProjects />
+        <DifferentApproach />
+        <Clients />
         <FAQ />
-        <CTA />
+        <SocialProof />
       </div>
-
-      <Footer />
     </main>
   );
 }

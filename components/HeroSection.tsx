@@ -1,103 +1,140 @@
 "use client";
-import React from "react";
-import { ArrowDown } from "lucide-react";
-import Image from "next/image";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { ArrowRight, Terminal } from "lucide-react";
 import { motion } from "framer-motion";
 
+const codeLines = [
+  { text: "$ codeaudit scan ./src --fail-on-critical", type: "cmd" },
+  { text: "[INFO] Initializing AST parsers... Done.", type: "log" },
+  { text: "[INFO] Traversing dependency tree... Found 412 packages.", type: "log" },
+  { text: "[WARN] lib/auth.ts:13 - Potential hardcoded secret detected.", type: "warn" },
+  { text: "    12 | const verifyUser = (token) => {", type: "code" },
+  { text: "  > 13 |   const JWT_SECRET = 'super-secret-dev-key-1234';", type: "code_error" },
+  { text: "    14 |   return jwt.verify(token, JWT_SECRET);", type: "code" },
+  { text: "[CRITICAL] src/api/users.ts:21 - Unparameterized SQL query.", type: "error" },
+  { text: "[ERROR] Scan completed with 1 Critical, 1 Warning.", type: "error" }
+];
+
 const HeroSection = () => {
+  const [visibleLines, setVisibleLines] = useState(0);
+
+  useEffect(() => {
+    if (visibleLines < codeLines.length) {
+      const timer = setTimeout(() => {
+        setVisibleLines(prev => prev + 1);
+      }, visibleLines === 0 ? 800 : Math.random() * 300 + 50); // initial delay, then random fast typing
+      return () => clearTimeout(timer);
+    }
+  }, [visibleLines]);
+
   return (
-    <section id="home" className="pt-32 md:pt-40 pb-16 md:pb-20 px-4 md:px-6 max-w-7xl mx-auto flex flex-col items-center text-center relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
-
-      <motion.h1 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 max-w-4xl leading-[1.1]"
-      >
-        Ship Your MVP Faster <br className="hidden md:block" /> Not in 6 Months
-      </motion.h1>
+    <section className="relative pt-32 md:pt-48 pb-24 px-4 md:px-6 w-full bg-white border-b border-gray-200 overflow-hidden">
       
-      <motion.p 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-        className="text-base sm:text-lg md:text-xl text-gray-600 mb-10 max-w-2xl px-4"
-      >
-        Battle-tested code. Enterprise-grade. AI-accelerated. <br className="hidden md:block" />
-        Stop losing to competitors who ship faster.
-      </motion.p>
+      {/* Precision Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      
+      {/* Radial fade to smooth the grid edges */}
+      <div className="absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,white_70%)]"></div>
 
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-        className="flex flex-col sm:flex-row items-center gap-4 mb-16 md:mb-20 w-full sm:w-auto px-4"
-      >
-        <Link 
-          href="/contact"
-          className="group relative w-full sm:w-auto overflow-hidden bg-gradient-to-r from-blue-600 to-[#0B57D0] text-white px-8 py-4 rounded-full font-bold shadow-[0_0_40px_-10px_rgba(11,87,208,0.6)] hover:shadow-[0_0_60px_-15px_rgba(11,87,208,0.8)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-center"
-        >
-          <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"></div>
-          <span className="relative z-10">Schedule Strategy Call</span>
-        </Link>
-        <Link 
-          href="/process"
-          className="w-full sm:w-auto bg-white/60 backdrop-blur-md text-gray-900 border border-gray-200 px-8 py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
-        >
-          View Our Process
-          <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-        </Link>
-      </motion.div>
-
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.6 }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 border-t border-gray-100 pt-12 mb-20 w-full max-w-5xl"
-      >
-        {[
-          { stat: "50+", label: "Clients" },
-          { stat: "6+", label: "Years" },
-          { stat: "100%", label: "On-Time" },
-          { stat: "98%", label: "Success Rates" }
-        ].map((item, idx) => (
-          <div key={idx} className="flex flex-col items-center">
-            <span className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">{item.stat}</span>
-            <span className="text-sm md:text-base text-gray-500 font-medium tracking-wide uppercase">{item.label}</span>
+      <div className="relative z-10 w-full max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+        
+        {/* Left: Copy */}
+        <div className="flex flex-col items-start text-left max-w-2xl">
+          <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 border border-gray-300 bg-gray-50">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span className="text-xs font-mono font-bold text-gray-700 uppercase tracking-wider">v2.0.0-beta</span>
           </div>
-        ))}
-      </motion.div>
 
-      {/* Images section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-        className="flex flex-col md:flex-row gap-8 w-full items-center justify-center max-w-6xl mx-auto"
-      >
-        <div className="w-full md:w-1/2 rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500 relative bg-gray-50 group border border-gray-100">
-          <Image 
-            src="/images/dashboard_mockup.png" 
-            alt="Dashboard" 
-            width={1200}
-            height={800}
-            className="w-full h-auto group-hover:scale-105 transition-transform duration-700 ease-in-out"
-          />
-          <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[2rem] pointer-events-none"></div>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-black tracking-tighter text-gray-900 mb-6 leading-[1.05]">
+            Stop Shipping <br className="hidden lg:block"/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 bg-[length:200%_auto] animate-gradient">Blind.</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-light border-l-2 border-gray-300 pl-4">
+            Connect your repository and receive a comprehensive security, performance, and architecture audit in seconds. Uncover logic flaws that standard scanners miss.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+            <Link 
+              href="?waitlist=true"
+              scroll={false}
+              className="w-full sm:w-auto bg-gray-900 text-white px-8 py-4 font-bold border border-gray-900 hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)]"
+            >
+              Initialize Scan <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link 
+              href="/sample-report"
+              className="w-full sm:w-auto bg-white text-gray-900 border border-gray-300 px-8 py-4 font-bold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+            >
+              View Documentation
+            </Link>
+          </div>
         </div>
-        <div className="w-full md:w-1/2 rounded-[2rem] overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-500 relative bg-gray-50 group border border-gray-100">
-           <Image 
-            src="/images/mobile_mockup.png" 
-            alt="Mobile App" 
-            width={1200}
-            height={800}
-            className="w-full h-auto group-hover:scale-105 transition-transform duration-700 ease-in-out"
-          />
-          <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-[2rem] pointer-events-none"></div>
+
+        {/* Right: Animated Terminal Output */}
+        <div className="w-full relative lg:pl-10">
+          <div className="bg-[#050505] border border-gray-800 p-6 relative overflow-hidden shadow-2xl group">
+            
+            {/* Terminal Header */}
+            <div className="flex items-center justify-between mb-6 border-b border-gray-800 pb-4">
+              <div className="flex items-center gap-4">
+                <Terminal className="w-5 h-5 text-green-500" />
+                <span className="text-xs font-mono font-bold text-gray-500">codeaudit-cli --stdout</span>
+              </div>
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
+              </div>
+            </div>
+
+            {/* Terminal Lines */}
+            <div className="font-mono text-[11px] sm:text-xs leading-[1.8] tracking-tight min-h-[250px]">
+              {codeLines.slice(0, visibleLines).map((line, i) => (
+                <motion.div 
+                  initial={{ opacity: 0, x: -5 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.1 }}
+                  key={i} 
+                  className={`
+                  ${line.type === 'cmd' ? 'text-green-400 font-bold mb-2' : ''}
+                  ${line.type === 'log' ? 'text-gray-400' : ''}
+                  ${line.type === 'warn' ? 'text-yellow-500 mt-2' : ''}
+                  ${line.type === 'error' ? 'text-red-500 mt-2 font-bold' : ''}
+                  ${line.type === 'code' ? 'text-gray-500 ml-4 border-l border-gray-800 pl-4' : ''}
+                  ${line.type === 'code_error' ? 'text-red-400 bg-red-500/10 ml-4 border-l-2 border-red-500 pl-4 py-1' : ''}
+                `}>
+                  {line.text}
+                </motion.div>
+              ))}
+              
+              {/* Blinking Cursor */}
+              {visibleLines >= codeLines.length && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: [0, 1, 0] }}
+                  transition={{ repeat: Infinity, duration: 0.8 }}
+                  className="text-green-500 font-bold mt-2"
+                >
+                  $ _
+                </motion.div>
+              )}
+              {visibleLines < codeLines.length && (
+                <div className="w-2 h-4 bg-gray-500 inline-block animate-pulse mt-1 ml-1"></div>
+              )}
+            </div>
+            
+            {/* Scan Line Effect */}
+            <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px] opacity-20"></div>
+          </div>
+          
+          {/* Decorative measuring lines */}
+          <div className="absolute top-10 right-4 w-4 h-4 border-t border-r border-gray-300"></div>
+          <div className="absolute bottom-10 lg:left-6 left-0 w-4 h-4 border-b border-l border-gray-300"></div>
         </div>
-      </motion.div>
+
+      </div>
     </section>
   );
 };

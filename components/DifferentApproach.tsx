@@ -1,109 +1,88 @@
-"use client";
 import React from "react";
-import { motion } from "framer-motion";
-import { X, Check, ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 const DifferentApproach = () => {
   return (
-    <section className="py-20 md:py-32 px-4 md:px-6 max-w-[1400px] mx-auto w-full relative">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none hidden md:block"></div>
-
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-12 md:mb-20 relative z-10"
-      >
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tight mb-4 md:mb-6">
-          A completely different <span className="text-[#0B57D0]">approach.</span>
+    <section className="py-24 px-4 md:px-6 max-w-[90rem] mx-auto w-full border-t border-gray-200 bg-white">
+      
+      <div className="mb-16 max-w-3xl">
+        <h2 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-3">
+          Engineering Value
         </h2>
-        <p className="text-gray-500 text-base md:text-xl max-w-2xl mx-auto px-2">
-          We threw out the traditional agency playbook. No bloated sprints, no unpredictable billing. Just rapid execution and enterprise-grade code.
+        <h3 className="text-3xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
+          Why Developers Choose CodeAudit
+        </h3>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Stop wasting engineering cycles on manual review and fragmented tooling. 
+          CodeAudit drops seamlessly into your workflow to enforce architectural and security standards automatically.
         </p>
-      </motion.div>
-
-      <div className="flex flex-col lg:flex-row items-stretch justify-center gap-6 md:gap-8 lg:gap-12 relative z-10">
-        
-        {/* The Old Way */}
-        <motion.div 
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex-1 bg-[#FAFAFA] border border-gray-200 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 p-6 md:p-8 opacity-5 md:opacity-10 pointer-events-none">
-            <X className="w-24 h-24 md:w-32 md:h-32 text-gray-500" />
-          </div>
-          
-          <h3 className="text-xl md:text-2xl font-bold text-gray-500 mb-6 md:mb-8 border-b border-gray-200 pb-4 md:pb-6">
-            The Traditional Way
-          </h3>
-          
-          <ul className="space-y-4 md:space-y-6">
-            {[
-              "Billable hours with unpredictable final costs",
-              "Endless 'discovery' phases delaying launch",
-              "Junior developers learning on your dime",
-              "You don't own the source code until final payment",
-              "Spaghetti code that can't scale past 1,000 users"
-            ].map((text, i) => (
-              <li key={i} className="flex items-start gap-3 md:gap-4 text-gray-500">
-                <div className="mt-1 bg-red-100 rounded-full p-1 flex-shrink-0">
-                  <X className="w-3 h-3 md:w-4 md:h-4 text-red-500" />
-                </div>
-                <span className="text-sm md:text-lg leading-relaxed">{text}</span>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* The Monk Way */}
-        <motion.div 
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex-1 bg-white border border-blue-200 rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-12 relative overflow-hidden shadow-2xl"
-        >
-          {/* Premium Glow */}
-          <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-blue-600/20 blur-[80px] rounded-full pointer-events-none"></div>
-          
-          <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-blue-500/10 text-blue-400 font-semibold text-xs md:text-sm mb-4 md:mb-6 border border-blue-500/20 relative z-10">
-            <Check className="w-3 h-3 md:w-4 md:h-4" /> The Monk Studio Way
-          </div>
-          
-          <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 md:mb-8 border-b border-blue-100 pb-4 md:pb-6 tracking-tight relative z-10">
-            Production-Ready Faster
-          </h3>
-          
-          <ul className="space-y-4 md:space-y-6 relative z-10">
-            {[
-              "Fixed pricing. No surprises, no scope creep.",
-              "Battle-tested architecture deployed on Day 1.",
-              "Senior engineers building core business logic.",
-              "100% intellectual property ownership from the start.",
-              "Enterprise-grade infrastructure built to scale instantly."
-            ].map((text, i) => (
-              <li key={i} className="flex items-start gap-3 md:gap-4 text-gray-700">
-                <div className="mt-1 bg-blue-500/20 rounded-full p-1 flex-shrink-0 border border-blue-500/30">
-                  <Check className="w-3 h-3 md:w-4 md:h-4 text-blue-400" />
-                </div>
-                <span className="text-sm md:text-lg leading-relaxed">{text}</span>
-              </li>
-            ))}
-          </ul>
-          
-          <div className="mt-8 md:mt-12 relative z-10">
-            <button className="flex items-center gap-2 text-[#0B57D0] font-bold group text-sm md:text-base hover:text-blue-700">
-              Start your build 
-              <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
-        </motion.div>
-
       </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        
+        {/* Box 1: Save Hours (2 columns wide) */}
+        <div className="col-span-1 md:col-span-2 border border-gray-300 bg-white p-8 md:p-10 flex flex-col justify-between hover:border-gray-400 transition-colors">
+          <div className="mb-8">
+             <h3 className="text-2xl font-bold text-gray-900 mb-3">Save Hours of Manual Review</h3>
+             <p className="text-gray-600 text-base leading-relaxed max-w-lg">
+               Get a complete architectural and security audit in seconds. CodeAudit processes thousands of lines of code locally without needing to configure complex CI pipelines.
+             </p>
+          </div>
+          <div className="bg-[#0a0a0c] text-green-400 font-mono p-5 rounded border border-gray-800 text-xs sm:text-sm shadow-inner overflow-x-auto">
+            <div className="text-gray-500 mb-2">$ codeaudit run ./src --strict</div>
+            <div className="flex items-center gap-2 mb-1"><span className="text-blue-400">ℹ</span> Analyzing 42,012 LOC across 148 files...</div>
+            <div className="flex items-center gap-2 mb-1"><span className="text-green-500">✔</span> Scan completed in 0.04s</div>
+            <div className="flex items-center gap-2 mb-1"><span className="text-green-500">✔</span> 0 Critical Vulnerabilities detected</div>
+            <div className="flex items-center gap-2 mt-3 text-gray-300">$ ready for deployment.</div>
+          </div>
+        </div>
+        
+        {/* Box 2: Confidence (1 column wide) */}
+        <div className="col-span-1 border border-gray-300 bg-white p-8 md:p-10 flex flex-col justify-between hover:border-gray-400 transition-colors">
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Launch With Confidence</h3>
+            <p className="text-gray-600 text-base leading-relaxed">
+              Catch critical issues, exposed secrets, and performance bottlenecks before your users do.
+            </p>
+          </div>
+          
+          <div className="mt-8 border-t border-gray-200 flex flex-col font-mono text-xs md:text-sm">
+             <div className="py-4 border-b border-gray-200 flex justify-between items-center">
+               <span className="text-gray-500 font-bold">SECRETS_SCAN</span>
+               <span className="text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded border border-green-200">PASS</span>
+             </div>
+             <div className="py-4 border-b border-gray-200 flex justify-between items-center">
+               <span className="text-gray-500 font-bold">PERF_CHECK</span>
+               <span className="text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded border border-green-200">PASS</span>
+             </div>
+             <div className="py-4 border-b border-gray-200 flex justify-between items-center">
+               <span className="text-gray-500 font-bold">DEP_AUDIT</span>
+               <span className="text-green-600 font-bold bg-green-50 px-2 py-0.5 rounded border border-green-200">PASS</span>
+             </div>
+          </div>
+        </div>
+
+        {/* Box 3: Modern Projects (Full width) */}
+        <div className="col-span-1 md:col-span-3 border border-gray-300 p-8 md:p-10 flex flex-col md:flex-row justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
+           <div className="md:w-1/2 mb-6 md:mb-0">
+             <h3 className="text-2xl font-bold text-gray-900 mb-3">Built For Modern Stacks</h3>
+             <p className="text-gray-600 text-base leading-relaxed max-w-md">
+               CodeAudit works natively with your existing ecosystem. No proprietary configuration files or complex setup required.
+             </p>
+           </div>
+           <div className="md:w-1/2 flex flex-wrap gap-3 md:justify-end font-mono text-sm uppercase tracking-wider font-bold">
+             <span className="border border-gray-300 bg-white px-4 py-2 text-gray-800 shadow-sm">React.js</span>
+             <span className="border border-gray-300 bg-white px-4 py-2 text-gray-800 shadow-sm">Next.js</span>
+             <span className="border border-gray-300 bg-white px-4 py-2 text-gray-800 shadow-sm">Node.js</span>
+             <span className="border border-gray-300 bg-white px-4 py-2 text-gray-800 shadow-sm">TypeScript</span>
+             <span className="border border-gray-300 bg-white px-4 py-2 text-gray-800 shadow-sm">Django</span>
+             <span className="border border-gray-300 bg-white px-4 py-2 text-gray-800 shadow-sm">FastAPI</span>
+           </div>
+        </div>
+        
+      </div>
+      
     </section>
   );
 };

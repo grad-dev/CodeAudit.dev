@@ -1,91 +1,100 @@
 "use client";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 
-const faqs = [
+const defaultFaqs = [
   {
-    question: "How do you deliver an MVP so fast?",
-    answer: "We leverage a battle-tested foundational architecture, pre-built enterprise-grade modules, and AI-accelerated workflows. Instead of reinventing the wheel (like auth, payments, or basic CRUD), we focus purely on your unique business logic."
+    id: "SEC-01",
+    question: "Does CodeAudit access my private code?",
+    answer: "Only repositories you explicitly authorize are analyzed. Source code is never retained or stored after the analysis pipeline completes."
   },
   {
-    question: "Do I own the source code?",
-    answer: "Yes, 100%. Upon completion and final payment, the entire codebase, intellectual property, and infrastructure access are transferred entirely to you. No vendor lock-in."
+    id: "PERF-01",
+    question: "How long does an audit take?",
+    answer: "Typical repository scans complete within 5 to 45 seconds, depending on the complexity of the dependency tree and total lines of code."
   },
   {
-    question: "What if I need changes after the MVP is launched?",
-    answer: "We offer flexible post-launch support and iteration retainers. Once your MVP is live and gathering user feedback, we can seamlessly transition into a phase 2 to build out additional features."
+    id: "RES-01",
+    question: "Do you provide automated fixes?",
+    answer: "Every vulnerability detected includes an exact trace to the source file, an explanation of the risk, and a drop-in code snippet to remediate the issue."
   },
   {
-    question: "What tech stack do you use?",
-    answer: "We build scalable systems using Next.js (React), React Native, Java/Spring Boot, and Node.js. Our infrastructure is powered by AWS and Vercel to ensure enterprise-grade reliability from day one."
+    id: "ARCH-01",
+    question: "Is this a penetration test?",
+    answer: "No. CodeAudit performs static code analysis (SAST) and architectural review. It is designed to run locally or in CI/CD to catch issues before deployment."
   },
   {
-    question: "How do we communicate during the project?",
-    answer: "We set up a dedicated Slack/Discord channel for real-time communication, provide weekly progress demos, and give you access to our project management board so you always know exactly where things stand."
+    id: "ENV-01",
+    question: "What repositories are supported?",
+    answer: "Currently supporting GitHub repositories. Support for GitLab and Bitbucket will be introduced in subsequent platform updates."
+  },
+  {
+    id: "LAUNCH-01",
+    question: "When will CodeAudit launch?",
+    answer: "The platform is in private beta. Initial access batches are being provisioned to waitlist members. Ensure you request access to secure your position in the queue."
+  },
+  {
+    id: "BILL-01",
+    question: "What will it cost?",
+    answer: "Pricing documentation is pending release. Waitlist members will receive priority pricing allocations during the beta period."
   }
 ];
 
-const FAQ = () => {
+interface FAQProps {
+  faqs?: { id?: string, question: string; answer: string }[];
+}
+
+const FAQ = ({ faqs = defaultFaqs }: FAQProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-32 px-6 max-w-4xl mx-auto w-full">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="text-center mb-16"
-      >
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
-          Frequently Asked Questions
+    <section id="faq" className="py-24 px-4 md:px-6 max-w-[90rem] mx-auto w-full bg-white border-t border-gray-200">
+      
+      <div className="mb-12 max-w-3xl mx-auto text-center">
+        <h2 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-3">
+          Documentation
         </h2>
-        <p className="text-gray-500 text-lg">
-          Everything you need to know about our process and how we work.
+        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+          Frequently Asked Questions
+        </h3>
+        <p className="text-lg text-gray-600 leading-relaxed">
+          Technical details and platform capabilities.
         </p>
-      </motion.div>
+      </div>
 
-      <div className="space-y-4">
-        {faqs.map((faq, index) => (
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            key={index} 
-            className="border border-gray-200/60 bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-          >
-            <button
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="w-full flex items-center justify-between p-6 md:p-8 text-left focus:outline-none group"
-            >
-              <span className={`text-lg font-semibold transition-colors ${openIndex === index ? "text-[#0B57D0]" : "text-gray-900 group-hover:text-[#0B57D0]"}`}>
-                {faq.question}
-              </span>
-              <motion.div
-                animate={{ rotate: openIndex === index ? 180 : 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className={`flex-shrink-0 ml-4 p-2 rounded-full ${openIndex === index ? "bg-blue-50 text-[#0B57D0]" : "bg-gray-50 text-gray-400 group-hover:bg-blue-50 group-hover:text-[#0B57D0]"}`}
+      <div className="max-w-4xl mx-auto border-t border-gray-300">
+        {faqs.map((faq, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <div key={index} className="border-b border-gray-300 bg-white">
+              <button
+                onClick={() => setOpenIndex(isOpen ? null : index)}
+                className="w-full flex items-center justify-between py-6 px-4 md:px-6 text-left hover:bg-gray-50 transition-colors group"
               >
-                <ChevronDown className="w-5 h-5" />
-              </motion.div>
-            </button>
-            <AnimatePresence>
-              {openIndex === index && (
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: "auto", opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.3, ease: "easeInOut" }}
-                >
-                  <div className="px-6 md:px-8 pb-8 text-gray-600 leading-relaxed">
+                <div className="flex items-center gap-6">
+                   <span className="font-mono text-xs font-bold text-gray-400 hidden sm:block w-16">
+                     {faq.id || `FAQ-0${index + 1}`}
+                   </span>
+                   <span className={`text-lg md:text-xl font-bold transition-colors ${isOpen ? 'text-gray-900' : 'text-gray-800 group-hover:text-blue-600'}`}>
+                     {faq.question}
+                   </span>
+                </div>
+                
+                <div className="text-gray-400 ml-4">
+                  {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                </div>
+              </button>
+              
+              {isOpen && (
+                <div className="px-4 md:px-6 pb-8 ml-0 sm:ml-[5.5rem] max-w-2xl">
+                  <p className="text-gray-600 text-base leading-relaxed">
                     {faq.answer}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
+                  </p>
+                </div>
+               )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

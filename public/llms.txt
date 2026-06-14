@@ -1,0 +1,26 @@
+# CodeAudit.dev — AI Code Audit Platform
+
+CodeAudit.dev is an automated code analysis tool designed to catch security vulnerabilities, performance bottlenecks, and architectural debt before deployment. It is particularly focused on identifying mistakes commonly introduced by AI coding assistants ("vibe coding").
+
+Currently, CodeAudit.dev is in waitlist mode.
+
+## Key Offerings
+
+- **Security Scanner**: Finds exposed secrets, hardcoded credentials, and vulnerable dependencies.
+- **Performance Analyzer**: Spots bundle bloat, slow rendering paths, and inefficient code.
+- **Architecture Review**: Helps understand codebase structure, duplication, and technical debt.
+- **AI-Generated Code Review**: Catches specific mistakes AI coding tools make (e.g., disabled row-level security, unsafe implementations).
+- **AI-Ready Fix Prompts**: Every finding includes a copy-paste prompt formatted for agents like Claude or Cursor to fix instantly.
+- **Stack-Specific Audits**: Tailored checks for Next.js, React, Node.js, Django, FastAPI, Supabase, and TypeScript.
+
+## Key Pages
+
+- Homepage: https://codeaudit.dev
+- Pricing: https://codeaudit.dev/pricing
+- Sample Report: https://codeaudit.dev/sample-report
+- Waitlist: https://codeaudit.dev/waitlist
+- Blog: https://codeaudit.dev/blog
+
+## Audience
+
+CodeAudit.dev is built for indie hackers, startup founders, freelancers, and agencies shipping modern web applications.
