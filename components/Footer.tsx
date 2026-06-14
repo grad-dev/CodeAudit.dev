@@ -15,24 +15,22 @@ const Footer = () => {
                 CodeAudit
               </h3>
             </div>
-            <p className="text-gray-600 text-xs leading-relaxed mb-8 border-l-2 border-gray-300 pl-4">
-              Stop shipping blind. Security, performance, and architecture audits for modern codebases.
+            <p className="text-gray-600 text-xs leading-relaxed mb-6 border-l-2 border-gray-300 pl-4">
+              Stop shipping blind. Security, performance, and architecture audits for modern codebases. Static analysis that catches what your team missed.
             </p>
-            <div className="flex items-center gap-2">
-              <Link 
-                href="#" 
-                target="_blank"
-                className="w-10 h-10 bg-gray-50 flex items-center justify-center border border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-colors text-xs font-bold text-gray-500"
-              >
-                X
-              </Link>
-              <Link 
-                href="#" 
-                target="_blank"
-                className="w-10 h-10 bg-gray-50 flex items-center justify-center border border-gray-300 hover:border-blue-600 hover:text-blue-600 transition-colors text-xs font-bold text-gray-500"
-              >
-                GH
-              </Link>
+            <div className="font-mono text-[10px] uppercase tracking-widest text-gray-400 space-y-2">
+              <div className="flex justify-between border-b border-gray-200 pb-1">
+                <span>System Status</span>
+                <span className="text-green-600 font-bold">● Operational</span>
+              </div>
+              <div className="flex justify-between border-b border-gray-200 pb-1">
+                <span>Engine</span>
+                <span className="text-gray-600">v2.0.0-beta</span>
+              </div>
+              <div className="flex justify-between border-b border-gray-200 pb-1">
+                <span>Uptime</span>
+                <span className="text-gray-600">99.97%</span>
+              </div>
             </div>
           </div>
 
