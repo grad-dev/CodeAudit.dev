@@ -1,18 +1,24 @@
-
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 import "./globals.css";
 import { ThemeProvider } from "./provider";
-import { PersistentBanner } from "@/components/PersistentBanner";
-import { WaitlistModal } from "@/components/WaitlistModal";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
+// Current Components
+import { PersistentBanner as CurrentPersistentBanner } from "@/components/PersistentBanner";
+import { WaitlistModal as CurrentWaitlistModal } from "@/components/WaitlistModal";
+import CurrentNavbar from "@/components/Navbar";
+import CurrentFooter from "@/components/Footer";
 
+// V1 Components
+import { PersistentBanner as V1PersistentBanner } from "@/components/v1/PersistentBanner";
+import { WaitlistModal as V1WaitlistModal } from "@/components/v1/WaitlistModal";
+import V1Navbar from "@/components/v1/Navbar";
+import V1Footer from "@/components/v1/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://codeaudit.dev'),
@@ -43,14 +49,18 @@ export const metadata: Metadata = {
   },
 };
 
-import { Suspense } from "react";
-import { GoogleAnalytics } from "@next/third-parties/google";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isV1 = process.env.SITE_THEME === "v1";
+
+  const PersistentBanner = isV1 ? V1PersistentBanner : CurrentPersistentBanner;
+  const WaitlistModal = isV1 ? V1WaitlistModal : CurrentWaitlistModal;
+  const Navbar = isV1 ? V1Navbar : CurrentNavbar;
+  const Footer = isV1 ? V1Footer : CurrentFooter;
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
