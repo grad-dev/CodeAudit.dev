@@ -153,7 +153,7 @@ export default async function ComparePage({ params }: { params: Promise<{ compet
         {/* Header Section */}
         <div className="max-w-3xl mx-auto mb-12 bg-black text-white p-6 md:p-10 border-[4px] border-black shadow-[8px_8px_0_0_rgba(0,0,255,1)]">
           <div className="inline-flex items-center gap-2 px-2 py-1 bg-white text-black border-[2px] border-black mb-4 shadow-[2px_2px_0_0_rgba(255,0,0,1)]">
-            <span className="text-[10px] font-mono font-black uppercase tracking-widest text-black">TOOL COMPARISON</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-black">TOOL COMPARISON</span>
           </div>
           <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white mb-4 uppercase leading-[1]">
             CodeAudit.dev vs {data.name}: Which Is Right for You?

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white border-t-[8px] border-black pt-20 pb-10 px-6 font-mono text-sm relative overflow-hidden">
+    <footer className="w-full bg-black text-white border-t-[8px] border-black pt-20 pb-10 px-6 text-sm relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
       <div className="max-w-[90rem] mx-auto flex flex-col relative z-10">
@@ -22,20 +22,7 @@ const Footer = () => {
               <br/><br/>
               <span className="text-yellow-400 uppercase tracking-widest text-[10px]">&gt;&gt; AUDIT YOUR CODE. SHIP WITH CONFIDENCE.</span>
             </p>
-            <div className="font-mono text-xs uppercase tracking-widest text-white space-y-3 bg-gray-900 p-4 border-[2px] border-white">
-              <div className="flex justify-between border-b-[2px] border-gray-700 pb-2">
-                <span>System Status</span>
-                <span className="text-green-400 font-black animate-pulse">● OPERATIONAL</span>
-              </div>
-              <div className="flex justify-between border-b-[2px] border-gray-700 pb-2">
-                <span>Engine</span>
-                <span className="text-blue-400 font-bold">v2.0.0-beta</span>
-              </div>
-              <div className="flex justify-between pb-1">
-                <span>Uptime</span>
-                <span className="text-yellow-400 font-bold">99.97%</span>
-              </div>
-            </div>
+
           </div>
 
           <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-6 bg-white text-black p-8 border-[4px] border-white shadow-[12px_12px_0px_0px_rgba(255,255,255,1)]">

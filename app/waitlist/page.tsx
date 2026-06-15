@@ -44,7 +44,7 @@ export default function WaitlistPage() {
   };
 
   return (
-    <div className="pt-32 pb-24 min-h-screen flex flex-col justify-center bg-white font-mono">
+    <div className="pt-32 pb-24 min-h-screen flex flex-col justify-center bg-white ">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

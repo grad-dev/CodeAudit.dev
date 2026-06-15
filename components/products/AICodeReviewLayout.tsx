@@ -3,7 +3,7 @@ import type { ProductData } from '@/data/products';
 
 export default function AICodeReviewLayout({ product }: { product: ProductData }) {
   return (
-    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black font-mono px-4 md:px-8">
+    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black px-4 md:px-8">
       {/* Background Grid */}
       <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000015_2px,transparent_2px),linear-gradient(to_bottom,#00000015_2px,transparent_2px)] bg-[size:40px_40px] z-0"></div>
 
@@ -81,7 +81,7 @@ export default function AICodeReviewLayout({ product }: { product: ProductData }
               <div className="px-4 py-4 md:px-6 bg-green-100 text-green-900 flex border-t-[4px] border-black">
                 <span className="select-none mr-4 font-black w-4 flex-shrink-0 text-right">+</span>
                 <div className="min-w-0">
-                  <p className="font-black uppercase break-words bg-green-500 text-white inline-block px-2 py-0.5 mb-2 border-[2px] border-green-900 shadow-[2px_2px_0_0_#14532d] text-[10px]">[FIX SUGGESTION]</p>
+                  <p className="font-black uppercase text-green-800 text-xs tracking-widest border-b-[2px] border-green-800 pb-1 mb-2 inline-block">[FIX SUGGESTION]</p>
                   <p className="mt-2 font-bold text-sm border-l-[4px] border-green-900 pl-3 py-1">{product.exampleFinding.fix}</p>
                 </div>
               </div>

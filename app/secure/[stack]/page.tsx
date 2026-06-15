@@ -59,7 +59,7 @@ export default function StackPage({ params }: { params: { stack: string } }) {
       {/* Background Grid */}
       <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000015_2px,transparent_2px),linear-gradient(to_bottom,#00000015_2px,transparent_2px)] bg-[size:40px_40px] z-0"></div>
 
-      <div className="container relative z-10 px-4 mx-auto max-w-[85rem] font-mono">
+      <div className="container relative z-10 px-4 mx-auto max-w-[85rem]">
         
         {/* Header Section */}
         <div className="text-left mb-12 max-w-3xl bg-white p-6 md:p-8 border-[4px] border-black shadow-[8px_8px_0_0_#000]">
@@ -96,7 +96,7 @@ export default function StackPage({ params }: { params: { stack: string } }) {
             <div className="divide-y-[4px] divide-black bg-gray-50">
               {stack.commonIssues.map((issue, idx) => (
                 <div key={idx} className="flex items-start gap-4 p-4 md:p-5 hover:bg-yellow-100 transition-colors group">
-                  <div className="font-mono text-black font-black text-[10px] md:text-xs bg-white border-[2px] border-black px-2 py-0.5 shadow-[2px_2px_0_0_#000] group-hover:bg-black group-hover:text-white transition-colors">
+                  <div className=" text-black font-black text-[10px] md:text-xs bg-white border-[2px] border-black px-2 py-0.5 shadow-[2px_2px_0_0_#000] group-hover:bg-black group-hover:text-white transition-colors">
                     {(idx + 1).toString().padStart(2, '0')}
                   </div>
                   <span className="text-black font-bold text-[10px] md:text-xs mt-1">{issue}</span>
@@ -110,7 +110,7 @@ export default function StackPage({ params }: { params: { stack: string } }) {
             <h2 className="text-base md:text-lg font-black mb-0 uppercase text-black bg-yellow-300 px-4 py-2 border-[4px] border-black inline-block w-fit shadow-[4px_4px_0_0_#000]">Example Finding</h2>
             <div className="bg-white border-[4px] border-black shadow-[8px_8px_0_0_#000] flex-grow flex flex-col">
               <div className="p-4 md:p-5 border-b-[4px] border-black flex items-center bg-gray-200">
-                <span className="px-2 py-1 text-[10px] md:text-xs font-mono font-black border-[2px] border-black bg-red-500 text-white uppercase mr-3 shadow-[2px_2px_0_0_#000]">
+                <span className="px-2 py-1 text-[10px] md:text-xs font-black border-[2px] border-black bg-red-500 text-white uppercase mr-3 shadow-[2px_2px_0_0_#000]">
                   [{stack.exampleFinding.severity}]
                 </span>
                 <h3 className="font-black text-black text-xs md:text-sm uppercase tracking-tight leading-tight">{stack.exampleFinding.title}</h3>
@@ -144,13 +144,13 @@ export default function StackPage({ params }: { params: { stack: string } }) {
               <div key={idx} className="border-[4px] border-black bg-white shadow-[6px_6px_0_0_#000] hover:translate-x-1 hover:-translate-y-1 transition-transform">
                 <div className="border-b-[4px] border-black p-4 md:p-5 bg-gray-100">
                   <h3 className="font-black text-black text-xs md:text-sm uppercase tracking-tight flex items-center gap-3">
-                    <span className="text-[10px] md:text-xs font-mono bg-black text-white px-2 py-0.5 border-[2px] border-black shadow-[2px_2px_0_0_#000]">Q</span>
+                    <span className="text-[10px] md:text-xs bg-black text-white px-2 py-0.5 border-[2px] border-black shadow-[2px_2px_0_0_#000]">Q</span>
                     {faq.q}
                   </h3>
                 </div>
                 <div className="p-4 md:p-5 bg-white">
                   <p className="text-gray-800 font-bold text-[10px] md:text-xs leading-relaxed flex items-start gap-3">
-                    <span className="text-[10px] md:text-xs font-mono font-black bg-yellow-300 text-black px-2 py-0.5 mt-0.5 border-[2px] border-black shadow-[2px_2px_0_0_#000]">A</span>
+                    <span className="text-[10px] md:text-xs font-black bg-yellow-300 text-black px-2 py-0.5 mt-0.5 border-[2px] border-black shadow-[2px_2px_0_0_#000]">A</span>
                     {faq.a}
                   </p>
                 </div>

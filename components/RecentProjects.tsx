@@ -71,12 +71,9 @@ const RecentProjects = () => {
     <section className="py-24 px-4 md:px-8 max-w-[85rem] mx-auto w-full bg-gray-50 border-t-[4px] border-black">
       
       <div className="mb-12 max-w-3xl bg-black p-6 text-white border-[4px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-        <h2 className="text-[10px] font-black tracking-widest text-black bg-white px-2 py-1 uppercase mb-3 inline-block">
-          Deep Inspection
+        <h2 className="text-xl md:text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-[1]">
+          Sample Findings
         </h2>
-        <h3 className="text-xl md:text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-[1]">
-          Live Audit Log
-        </h3>
         <p className="text-xs md:text-sm text-white font-bold leading-relaxed border-l-[4px] border-red-500 pl-4 bg-gray-900 py-2">
           See exactly what CodeAudit catches that standard linters miss. 
           No fluff—just raw, actionable security data.
@@ -87,7 +84,7 @@ const RecentProjects = () => {
       <div className="w-full border-[4px] border-black overflow-hidden bg-white mb-10 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
         
         {/* Table Header */}
-        <div className="hidden md:grid grid-cols-12 gap-4 p-5 bg-black border-b-[4px] border-black text-[10px] font-mono font-black text-white uppercase tracking-widest">
+        <div className="hidden md:grid grid-cols-12 gap-4 p-5 bg-black border-b-[4px] border-black text-[10px] font-black text-white uppercase tracking-widest">
           <div className="col-span-2">Severity</div>
           <div className="col-span-3">Vulnerability_ID</div>
           <div className="col-span-5">File_Path</div>
@@ -104,7 +101,7 @@ const RecentProjects = () => {
                 {/* Row Clickable Area */}
                 <button 
                   onClick={() => toggleRow(item.id)}
-                  className={`w-full grid grid-cols-1 md:grid-cols-12 gap-4 p-5 text-left items-center transition-colors font-mono text-xs md:text-sm ${isExpanded ? 'bg-blue-600 text-white' : 'hover:bg-gray-100 bg-white text-black'}`}
+                  className={`w-full grid grid-cols-1 md:grid-cols-12 gap-4 p-5 text-left items-center transition-colors text-xs md:text-sm ${isExpanded ? 'bg-blue-600 text-white' : 'hover:bg-gray-100 bg-white text-black'}`}
                 >
                   {/* Severity */}
                   <div className="col-span-1 md:col-span-2 flex items-center gap-2">
@@ -135,14 +132,14 @@ const RecentProjects = () => {
                   <div className="bg-gray-100 border-t-[4px] border-black p-6 md:p-10">
                     <div className="max-w-3xl">
                       <div className="mb-8 border-l-[4px] border-black pl-5">
-                        <h4 className="text-xs md:text-sm font-black text-black uppercase tracking-widest mb-3 font-mono bg-yellow-300 inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Detailed Analysis</h4>
+                        <h4 className="text-xs md:text-sm font-black text-black uppercase tracking-widest mb-3 bg-yellow-300 inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Detailed Analysis</h4>
                         <p className="text-black leading-relaxed font-sans text-xs md:text-sm font-bold">
                           {item.description}
                         </p>
                       </div>
 
                       <div className="border-l-[4px] border-black pl-5">
-                        <h4 className="text-xs md:text-sm font-black text-black uppercase tracking-widest mb-3 font-mono bg-green-400 inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Remediation Code</h4>
+                        <h4 className="text-xs md:text-sm font-black text-black uppercase tracking-widest mb-3 bg-green-400 inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Remediation Code</h4>
                         <div className="bg-black border-[4px] border-black p-5 overflow-x-auto shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)]">
                           <pre className="text-[10px] md:text-xs font-mono leading-relaxed"><code className="text-white">
                             {item.fix.split('\n').map((line, i) => {
@@ -170,7 +167,7 @@ const RecentProjects = () => {
       <div>
          <Link 
             href="/sample-report"
-            className="inline-flex items-center gap-2 font-black text-black hover:bg-black hover:text-white transition-all group font-mono text-[10px] md:text-xs uppercase tracking-widest border-[4px] border-black px-4 py-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white"
+            className="inline-flex items-center gap-2 font-black text-black hover:bg-black hover:text-white transition-all group text-[10px] md:text-xs uppercase tracking-widest border-[4px] border-black px-4 py-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white"
           >
             View Full Audit Log <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[3]" />
           </Link>

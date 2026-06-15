@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function SecurityScannerLayout({ product }: { product: ProductData }) {
   return (
-    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white font-mono text-black px-4 md:px-8">
+    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black px-4 md:px-8">
       {/* Background Grid */}
       <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000015_2px,transparent_2px),linear-gradient(to_bottom,#00000015_2px,transparent_2px)] bg-[size:40px_40px] z-0"></div>
 
@@ -12,11 +12,10 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
         <div className="border-b-[4px] border-black p-6 md:p-8 bg-black text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none mb-2">{product.h1}</h1>
-            <p className="text-red-500 uppercase text-[10px] md:text-xs font-black bg-red-950 inline-block px-2 py-1 border-[2px] border-red-500">Incident Report // Classified</p>
+            <p className="text-red-600 uppercase text-xs font-black tracking-widest mt-2">Incident Report // Classified</p>
           </div>
           <div className="text-left md:text-right w-full md:w-auto border-t-[2px] border-gray-800 md:border-none pt-4 md:pt-0">
-            <span className="block text-[10px] md:text-xs text-gray-500 uppercase font-black tracking-widest mb-1">Status</span>
-            <span className="text-white bg-red-600 font-black animate-pulse uppercase px-4 py-2 border-[4px] border-red-900 shadow-[4px_4px_0_0_#7f1d1d] inline-block">Critical</span>
+            
           </div>
         </div>
 
@@ -26,12 +25,12 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
           {/* Column 1: Briefing */}
           <div className="p-6 md:p-8 bg-white flex flex-col h-full">
             <div className="mb-10">
-              <h2 className="text-[10px] font-black text-gray-500 mb-3 uppercase tracking-widest bg-gray-100 inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0_0_#000]">Executive Summary</h2>
+              <h2 className="text-sm md:text-base font-black text-black mb-3 uppercase tracking-widest border-b-[4px] border-black pb-2">Executive Summary</h2>
               <p className="text-xs md:text-sm leading-relaxed font-bold border-l-[4px] border-red-600 pl-4 bg-red-50 py-2">{product.subheadline}</p>
             </div>
             
             <div className="mb-10 flex-grow">
-              <h2 className="text-[10px] font-black text-gray-500 mb-3 uppercase tracking-widest bg-gray-100 inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0_0_#000]">Operational Scope</h2>
+              <h2 className="text-sm md:text-base font-black text-black mb-3 uppercase tracking-widest border-b-[4px] border-black pb-2">Operational Scope</h2>
               <p className="text-xs md:text-sm leading-relaxed font-bold">{product.whatItDoes}</p>
             </div>
 
@@ -44,7 +43,7 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
 
           {/* Column 2: Detection Capabilities */}
           <div className="p-6 md:p-8 bg-gray-100 flex flex-col h-full">
-            <h2 className="text-[10px] font-black text-gray-500 mb-6 uppercase tracking-widest bg-white inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0_0_#000]">Active Heuristics</h2>
+            <h2 className="text-sm md:text-base font-black text-black mb-6 uppercase tracking-widest border-b-[4px] border-black pb-2">Active Heuristics</h2>
             <ul className="space-y-4 flex-grow font-bold text-xs md:text-sm">
               {product.checksFor?.map((check, idx) => (
                 <li key={idx} className="flex items-start bg-white p-3 border-[4px] border-black shadow-[4px_4px_0_0_#000]">
@@ -55,7 +54,7 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
             </ul>
             
             <div className="mt-10 pt-8 border-t-[4px] border-black border-dashed">
-              <h2 className="text-[10px] font-black text-gray-500 mb-4 uppercase tracking-widest">Integration Workflow</h2>
+              <h2 className="text-sm md:text-base font-black text-black mb-4 uppercase tracking-widest border-b-[4px] border-black pb-2">Integration Workflow</h2>
               <p className="text-xs bg-black text-green-400 p-5 border-[4px] border-black leading-relaxed font-mono shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                 {product.workflowDescription}
               </p>
@@ -74,7 +73,7 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
                   <h3 className="font-black text-red-900 mb-3 uppercase text-xs md:text-sm border-b-[4px] border-red-200 pb-3">{product.exampleFinding.title}</h3>
                   <p className="text-xs md:text-sm text-red-950 mb-5 leading-relaxed font-bold">{product.exampleFinding.description}</p>
                   <div className="bg-white border-[4px] border-black p-4 shadow-[4px_4px_0_0_#000]">
-                    <span className="text-[10px] font-black text-gray-500 block mb-2 uppercase tracking-widest bg-gray-100 inline-block px-2 py-1 border-[2px] border-black">Recommended Fix</span>
+                    <span className="text-xs font-black text-black block mb-2 uppercase tracking-widest border-b-[2px] border-black pb-1">Recommended Fix</span>
                     <p className="text-[10px] md:text-xs font-black text-black border-l-[4px] border-black pl-3">{product.exampleFinding.fix}</p>
                   </div>
                 </div>
@@ -82,7 +81,7 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
             )}
             
             <div className="mt-auto">
-              <h2 className="text-[10px] font-black text-white bg-black inline-block px-3 py-1 mb-6 uppercase tracking-widest shadow-[4px_4px_0_0_#000]">Query Logs (FAQ)</h2>
+              <h2 className="text-sm md:text-base font-black text-black mb-6 uppercase tracking-widest border-b-[4px] border-black pb-2">Query Logs (FAQ)</h2>
               <div className="space-y-6">
                 {product.faqs.map((faq, idx) => (
                   <div key={idx} className="border-[4px] border-black p-4 bg-gray-50 hover:bg-yellow-50 transition-colors shadow-[4px_4px_0_0_#000]">

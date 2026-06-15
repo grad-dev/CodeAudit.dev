@@ -14,17 +14,14 @@ const SocialProof = () => {
         {/* Left Side (Text) */}
         <div className="md:col-span-8 p-8 md:p-16 border-b-[4px] md:border-b-0 md:border-r-[4px] border-white flex flex-col items-start justify-center bg-black">
           
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-600 border-[2px] border-white mb-6 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
-            <div className="w-2 h-2 bg-white animate-pulse"></div>
-            <span className="text-[10px] font-mono font-black uppercase tracking-widest text-white">System Online</span>
-          </div>
+
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter mb-4 leading-[1] uppercase text-white">
             Secure Your Codebase.<br className="hidden md:block" /> <span className="bg-white text-black px-3 py-1 mt-2 inline-block transform rotate-1">Today.</span>
           </h2>
           
           <p className="text-sm text-white max-w-2xl font-bold leading-tight mb-0 border-l-[4px] border-blue-600 pl-4 py-2 bg-gray-900">
-            Join elite engineering teams relying on CodeAudit to catch critical vulnerabilities before they reach production.
+            Join developers relying on CodeAudit to catch critical vulnerabilities before they reach production.
           </p>
 
         </div>
@@ -42,10 +39,7 @@ const SocialProof = () => {
             Request Early Access
           </Link>
           
-          <div className="w-full mt-8 flex justify-between items-center border-t-[4px] border-black pt-4">
-            <span className="font-mono text-[10px] md:text-xs text-black font-black uppercase">Waitlist Status</span>
-            <span className="font-mono text-[10px] md:text-xs font-black text-white bg-black px-2 py-1">OPEN</span>
-          </div>
+
 
         </div>
 

@@ -41,7 +41,7 @@ export default function PrivacyPolicyPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="border-4 border-black p-8 md:p-12 bg-white [box-shadow:12px_12px_0_0_#000] font-mono">
+        <div className="border-4 border-black p-8 md:p-12 bg-white [box-shadow:12px_12px_0_0_#000] ">
           <h1 className="text-4xl md:text-6xl font-extrabold uppercase border-b-8 border-black pb-4 mb-8 tracking-tighter">
             DATA_PROTOCOL
             <br/>

@@ -69,7 +69,7 @@ export default function PricingPage() {
   };
 
   return (
-    <div className="pt-32 pb-24 bg-white font-mono text-black">
+    <div className="pt-32 pb-24 bg-white text-black">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

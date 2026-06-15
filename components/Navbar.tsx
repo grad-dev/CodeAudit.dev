@@ -37,31 +37,31 @@ const Navbar = () => {
             <nav className="hidden md:flex items-center absolute left-1/2 -translate-x-1/2 h-full border-x-[4px] border-black bg-white">
               
               <div className="h-full flex items-center relative group cursor-pointer border-r-[4px] border-black hover:bg-yellow-300 transition-colors">
-                <span className="font-mono text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6">Product</span>
+                <span className="text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6">Product</span>
                 
                 {/* Dropdown Menu */}
                 <div className="absolute top-[104%] left-[-4px] hidden group-hover:flex flex-col bg-white border-[4px] border-black w-64 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] z-50">
-                   <Link href="/products/security-scanner" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-mono font-black text-black uppercase transition-colors">Security Scanner</Link>
-                   <Link href="/products/performance-analyzer" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-mono font-black text-black uppercase transition-colors">Performance Analyzer</Link>
-                   <Link href="/products/architecture-review" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-mono font-black text-black uppercase transition-colors">Architecture Review</Link>
-                   <Link href="/products/ai-code-review" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-mono font-black text-black uppercase transition-colors">AI Code Review</Link>
-                   <Link href="/products/dependency-checker" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-mono font-black text-black uppercase transition-colors">Dependency Checker</Link>
-                   <Link href="/products/secrets-detection" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-mono font-black text-black uppercase transition-colors">Secrets Detection</Link>
-                   <Link href="/products/fix-prompts" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-mono font-black text-black uppercase transition-colors">AI Fix Prompts</Link>
-                   <Link href="/products/reports-dashboard" className="px-4 py-3 hover:bg-black hover:text-white text-xs font-mono font-black text-black uppercase transition-colors">Reports & Dashboards</Link>
+                   <Link href="/products/security-scanner" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-black text-black uppercase transition-colors">Security Scanner</Link>
+                   <Link href="/products/performance-analyzer" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-black text-black uppercase transition-colors">Performance Analyzer</Link>
+                   <Link href="/products/architecture-review" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-black text-black uppercase transition-colors">Architecture Review</Link>
+                   <Link href="/products/ai-code-review" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-black text-black uppercase transition-colors">AI Code Review</Link>
+                   <Link href="/products/dependency-checker" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-black text-black uppercase transition-colors">Dependency Checker</Link>
+                   <Link href="/products/secrets-detection" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-black text-black uppercase transition-colors">Secrets Detection</Link>
+                   <Link href="/products/fix-prompts" className="px-4 py-3 hover:bg-black hover:text-white border-b-[4px] border-black text-xs font-black text-black uppercase transition-colors">AI Fix Prompts</Link>
+                   <Link href="/products/reports-dashboard" className="px-4 py-3 hover:bg-black hover:text-white text-xs font-black text-black uppercase transition-colors">Reports & Dashboards</Link>
                 </div>
               </div>
 
-              <Link href="/#what-we-analyze" className="h-full flex items-center font-mono text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6 hover:bg-yellow-300 border-r-[4px] border-black transition-colors">
+              <Link href="/#what-we-analyze" className="h-full flex items-center text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6 hover:bg-yellow-300 border-r-[4px] border-black transition-colors">
                 Checks
               </Link>
-              <Link href="/secure/nextjs" className="h-full flex items-center font-mono text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6 hover:bg-yellow-300 border-r-[4px] border-black transition-colors">
+              <Link href="/secure/nextjs" className="h-full flex items-center text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6 hover:bg-yellow-300 border-r-[4px] border-black transition-colors">
                 Stack Guides
               </Link>
-              <Link href="/pricing" className="h-full flex items-center font-mono text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6 hover:bg-yellow-300 border-r-[4px] border-black transition-colors">
+              <Link href="/pricing" className="h-full flex items-center text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6 hover:bg-yellow-300 border-r-[4px] border-black transition-colors">
                 Pricing
               </Link>
-              <Link href="/blog" className="h-full flex items-center font-mono text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6 hover:bg-yellow-300 transition-colors">
+              <Link href="/blog" className="h-full flex items-center text-xs font-black uppercase tracking-widest text-black px-4 lg:px-6 hover:bg-yellow-300 transition-colors">
                 Blog
               </Link>
             </nav>
@@ -72,7 +72,7 @@ const Navbar = () => {
                 <Link 
                   href="?waitlist=true"
                   scroll={false} 
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-black text-white font-mono text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all border-[4px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2 bg-black text-white text-[10px] font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all border-[4px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none"
                 >
                   Join Waitlist
                   <ArrowRight className="w-4 h-4 stroke-[3]" />
@@ -120,7 +120,7 @@ const Navbar = () => {
             </div>
             
             {/* Mobile Menu Links */}
-            <div className="flex flex-col font-mono font-black text-base uppercase tracking-widest text-black px-6">
+            <div className="flex flex-col font-black text-base uppercase tracking-widest text-black px-6">
               <Link href="/products/security-scanner" onClick={() => setIsOpen(false)} className="hover:bg-yellow-300 hover:pl-4 transition-all flex items-center justify-between border-b-[4px] border-black py-4 group">
                 Product <span className="text-gray-400 group-hover:text-black">01</span>
               </Link>
@@ -144,7 +144,7 @@ const Navbar = () => {
                 href="?waitlist=true"
                 scroll={false} 
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center gap-2 w-full bg-black text-white py-4 font-mono text-xs font-black uppercase tracking-widest border-[4px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
+                className="flex items-center justify-center gap-2 w-full bg-black text-white py-4 text-xs font-black uppercase tracking-widest border-[4px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
               >
                 Join Waitlist
                 <ArrowRight className="w-5 h-5 stroke-[3]" />

@@ -51,12 +51,9 @@ const FAQ = ({ faqs = defaultFaqs }: FAQProps) => {
     <section id="faq" className="py-24 px-4 md:px-8 max-w-[85rem] mx-auto w-full bg-white border-t-[4px] border-black">
       
       <div className="mb-12 max-w-3xl bg-blue-600 p-6 text-white border-[4px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-        <h2 className="text-[10px] font-black tracking-widest text-white bg-black px-2 py-1 uppercase mb-3 inline-block border-[2px] border-black">
-          Documentation
-        </h2>
-        <h3 className="text-xl md:text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-[1]">
+        <h2 className="text-xl md:text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-[1]">
           Frequently Asked Questions
-        </h3>
+        </h2>
         <p className="text-xs md:text-sm text-white font-bold leading-relaxed border-l-[4px] border-black pl-4 bg-blue-700 py-2">
           Technical details and platform capabilities.
         </p>
@@ -72,9 +69,6 @@ const FAQ = ({ faqs = defaultFaqs }: FAQProps) => {
                 className={`w-full flex items-center justify-between py-5 px-5 text-left transition-colors group ${isOpen ? 'bg-yellow-300' : 'hover:bg-gray-100'}`}
               >
                 <div className="flex items-center gap-4">
-                   <span className="font-mono text-[10px] font-black text-white bg-black px-2 py-1 hidden sm:block w-fit uppercase tracking-widest border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]">
-                     {faq.id || `FAQ-0${index + 1}`}
-                   </span>
                    <span className={`text-base font-black uppercase tracking-tight transition-colors ${isOpen ? 'text-black' : 'text-black group-hover:text-blue-600'}`}>
                      {faq.question}
                    </span>

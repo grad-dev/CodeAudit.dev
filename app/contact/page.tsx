@@ -48,13 +48,13 @@ export default function ContactPage() {
           <h1 className="text-5xl md:text-7xl font-extrabold text-black mb-4 uppercase tracking-tighter border-b-8 border-black pb-4">
             COMM_LINK
           </h1>
-          <p className="text-xl font-mono mt-8 border-4 border-black inline-block px-4 py-2 bg-yellow-300 font-bold uppercase [box-shadow:4px_4px_0_0_#000]">
+          <p className="text-xl mt-8 border-4 border-black inline-block px-4 py-2 bg-yellow-300 font-bold uppercase [box-shadow:4px_4px_0_0_#000]">
             STATUS: AWAITING INPUT
           </p>
         </div>
 
         <div className="bg-white border-4 border-black p-8 md:p-12 [box-shadow:12px_12px_0_0_#000]">
-          <form action="mailto:gradviseofficial@gmail.com" method="POST" encType="text/plain" className="space-y-8 font-mono">
+          <form action="mailto:gradviseofficial@gmail.com" method="POST" encType="text/plain" className="space-y-8 ">
             <div>
               <label htmlFor="name" className="block text-lg font-bold text-black mb-2 uppercase">
                 &gt; Identify (Name)
@@ -105,7 +105,7 @@ export default function ContactPage() {
             </button>
           </form>
           
-          <div className="mt-12 text-center border-t-4 border-black pt-8 font-mono">
+          <div className="mt-12 text-center border-t-4 border-black pt-8">
             <p className="text-black font-bold">
               DIRECT PROTOCOL: <a href="mailto:gradviseofficial@gmail.com" className="bg-black text-white px-2 hover:bg-white hover:text-black border-2 border-black ml-2">gradviseofficial@gmail.com</a>
             </p>

@@ -49,7 +49,7 @@ export default function AboutPage() {
           ABOUT_SYS
         </h1>
         
-        <div className="font-mono text-lg space-y-6 bg-white border-4 border-black p-8 md:p-12 [box-shadow:12px_12px_0_0_#000]">
+        <div className=" text-lg space-y-6 bg-white border-4 border-black p-8 md:p-12 [box-shadow:12px_12px_0_0_#000]">
           <p className="border-l-4 border-black pl-4 font-bold">
             &gt; The way we write code has changed forever. With AI coding assistants and "vibe coding," developers are shipping faster than ever before. But this speed comes at a cost.
           </p>

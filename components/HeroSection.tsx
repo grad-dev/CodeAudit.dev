@@ -38,10 +38,7 @@ const HeroSection = () => {
         
         {/* Left: Copy */}
         <div className="flex flex-col items-start text-left max-w-xl bg-white p-6 border-[4px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <div className="inline-flex items-center gap-2 px-3 py-1 border-[2px] border-black bg-blue-600 text-white mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <span className="w-2 h-2 bg-white animate-pulse"></span>
-            <span className="text-[10px] font-mono font-black uppercase tracking-widest">CodeAudit Engine v2.0.0-beta</span>
-          </div>
+
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-black mb-6 leading-none uppercase">
             Stop <br/>
@@ -50,7 +47,7 @@ const HeroSection = () => {
           </h1>
           
           <p className="text-sm text-black font-bold mb-8 leading-relaxed border-l-[4px] border-blue-600 pl-4 py-2 bg-gray-50">
-            Connect your repository and receive a comprehensive security, performance, and architecture audit in seconds. Uncover logic flaws that standard scanners miss.
+            Connect your repository and receive a comprehensive security, performance, and architecture audit in seconds. Find issues before your users do.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mt-2">

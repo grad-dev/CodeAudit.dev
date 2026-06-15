@@ -8,7 +8,7 @@ interface Props {
 
 export default function DependencyCheckerLayout({ product }: Props) {
   return (
-    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black font-mono px-4 md:px-8 selection:bg-black selection:text-white">
+    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black px-4 md:px-8 selection:bg-black selection:text-white">
       {/* Background Grid */}
       <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000015_2px,transparent_2px),linear-gradient(to_bottom,#00000015_2px,transparent_2px)] bg-[size:40px_40px] z-0"></div>
 
@@ -16,7 +16,7 @@ export default function DependencyCheckerLayout({ product }: Props) {
         
         {/* Root Module */}
         <div className="mb-10">
-          <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-4 bg-black text-white inline-block px-4 py-2 break-all sm:break-normal shadow-[4px_4px_0_0_#ccc]">
+          <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 text-black border-b-[4px] border-black pb-2 inline-block">
             {product.h1 || 'Dependency Checker'}
           </h1>
           <p className="text-xs md:text-sm font-bold border-l-[4px] border-black pl-4 mt-2 break-words text-gray-800 bg-yellow-300 py-2">
@@ -95,7 +95,7 @@ export default function DependencyCheckerLayout({ product }: Props) {
           {/* End of Tree */}
           <div className="relative">
             <div className="absolute top-0 -left-6 md:-left-10 w-6 md:w-10 h-[4px] bg-black"></div>
-            <div className="text-[10px] md:text-xs font-black text-black uppercase tracking-widest pl-6 bg-yellow-300 inline-block px-3 py-1 border-[4px] border-black ml-4 shadow-[4px_4px_0_0_#000]">
+            <div className="text-[10px] md:text-xs font-black text-black uppercase tracking-widest pl-6 ml-4 mt-[-4px]">
               EOF
             </div>
           </div>

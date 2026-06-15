@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function BlogIndex() {
   return (
-    <div className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black min-h-screen font-mono">
+    <div className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black min-h-screen ">
       <div className="container px-4 mx-auto max-w-5xl">
         <div className="mb-12 border-b-[4px] border-black pb-8">
           <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-4 bg-yellow-300 inline-block px-4 py-2 border-[4px] border-black shadow-[4px_4px_0_0_#000]">

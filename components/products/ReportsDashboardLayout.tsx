@@ -4,7 +4,7 @@ import type { ProductData } from '@/data/products';
 
 export default function ReportsDashboardLayout({ product }: { product: ProductData }) {
   return (
-    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white font-mono text-black px-4 md:px-12 overflow-x-hidden">
+    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black px-4 md:px-12 overflow-x-hidden">
       {/* Background Grid */}
       <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000015_2px,transparent_2px),linear-gradient(to_bottom,#00000015_2px,transparent_2px)] bg-[size:40px_40px] z-0"></div>
 
@@ -27,27 +27,27 @@ export default function ReportsDashboardLayout({ product }: { product: ProductDa
         <div className="border-b-[6px] border-black pb-6 mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-6">
             <div className="max-w-3xl">
-              <h2 className="text-[10px] md:text-xs font-black uppercase tracking-widest mb-4 bg-black text-white inline-block px-3 py-1">CODEAUDIT.DEV // INTERNAL DOCUMENT</h2>
-              <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none mt-2 bg-yellow-300 inline-block px-4 py-2 border-[4px] border-black shadow-[4px_4px_0_0_#000]">{product.h1}</h1>
+              <h2 className="text-sm font-black uppercase tracking-widest mb-4 border-b-[4px] border-black pb-2 text-black">CODEAUDIT.DEV // INTERNAL DOCUMENT</h2>
+              <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mt-2 text-black">{product.h1}</h1>
             </div>
             <div className="text-right border-[4px] border-black p-4 bg-gray-100 flex-shrink-0 shadow-[4px_4px_0_0_#000]">
               <div className="text-[10px] md:text-xs uppercase font-black border-b-[4px] border-black pb-2 mb-2">DOC_ID: CA-{new Date().getFullYear()}-REV</div>
               <div className="text-[10px] md:text-xs uppercase font-black border-b-[4px] border-black pb-2 mb-2">DATE: {new Date().toISOString().split('T')[0]}</div>
-              <div className="text-[10px] md:text-xs uppercase font-black text-white bg-red-600 px-2 py-1 mt-3 border-[2px] border-black">CLASSIFICATION: CONFIDENTIAL</div>
+              <div className="text-[10px] md:text-xs uppercase font-black text-black bg-yellow-300 px-2 py-1 mt-3 border-[2px] border-black">CLASSIFICATION: CONFIDENTIAL</div>
             </div>
           </div>
           <div className="border-[4px] border-black bg-blue-600 text-white p-5 shadow-[6px_6px_0_0_#000]">
-            <p className="text-xs md:text-sm font-black uppercase leading-snug">
+            <p className="text-sm md:text-base font-black uppercase leading-snug">
               {product.subheadline}
             </p>
           </div>
         </div>
 
         {/* Executive Summary */}
-        <div className="mb-10 border-[4px] border-black p-6 md:p-8 relative bg-white shadow-[6px_6px_0_0_#000]">
-          <h3 className="bg-black text-white font-black uppercase text-[10px] md:text-xs px-3 py-1 inline-block absolute top-[-16px] left-6 border-[4px] border-black shadow-[2px_2px_0_0_#fff]">1.0 EXECUTIVE SUMMARY</h3>
+        <div className="mb-10 border-[4px] border-black p-6 md:p-8 bg-gray-50 shadow-[6px_6px_0_0_#000]">
+          <h3 className="text-lg md:text-xl font-black uppercase text-black border-b-[4px] border-black pb-2 mb-4">1.0 EXECUTIVE SUMMARY</h3>
           <div className="mt-4">
-            <p className="text-xs md:text-sm leading-relaxed font-bold border-l-[4px] border-black pl-4 bg-gray-50 py-2">
+            <p className="text-xs md:text-sm leading-relaxed font-bold border-l-[4px] border-black pl-4 bg-white py-2 pr-4">
               {product.whatItDoes}
             </p>
             <p className="text-xs md:text-sm leading-relaxed font-bold mt-6 border-t-[4px] border-black border-dashed pt-4">
@@ -59,7 +59,7 @@ export default function ReportsDashboardLayout({ product }: { product: ProductDa
         {/* Features Table */}
         {product.features && product.features.length > 0 && (
           <div className="mb-10">
-            <h3 className="bg-black text-white font-black uppercase text-[10px] md:text-xs px-3 py-1 inline-block mb-4 border-[4px] border-black shadow-[4px_4px_0_0_#000]">2.0 FEATURE SPECIFICATION</h3>
+            <h3 className="text-lg md:text-xl font-black uppercase text-black border-b-[4px] border-black pb-2 mb-4">2.0 FEATURE SPECIFICATION</h3>
             <div className="border-[4px] border-black shadow-[6px_6px_0_0_#000]">
               <div className="flex border-b-[4px] border-black bg-gray-200 font-black uppercase text-[10px] md:text-xs tracking-widest">
                 <div className="w-16 border-r-[4px] border-black p-3 flex items-center justify-center">REF</div>
@@ -82,7 +82,7 @@ export default function ReportsDashboardLayout({ product }: { product: ProductDa
         {/* FAQs */}
         {product.faqs && product.faqs.length > 0 && (
           <div className="mb-10">
-            <h3 className="bg-black text-white font-black uppercase text-[10px] md:text-xs px-3 py-1 inline-block mb-4 border-[4px] border-black shadow-[4px_4px_0_0_#000]">3.0 Q&A ADDENDUM</h3>
+            <h3 className="text-lg md:text-xl font-black uppercase text-black border-b-[4px] border-black pb-2 mb-4">3.0 Q&A ADDENDUM</h3>
             <div className="grid grid-cols-1 gap-6">
               {product.faqs.map((faq, idx) => (
                 <div key={idx} className="border-[4px] border-black p-5 relative bg-gray-100 shadow-[6px_6px_0_0_#000]">
