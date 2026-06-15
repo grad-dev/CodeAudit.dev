@@ -29,68 +29,66 @@ const HeroSection = () => {
   }, [visibleLines]);
 
   return (
-    <section className="relative pt-32 md:pt-48 pb-24 px-4 md:px-6 w-full bg-white border-b border-gray-200 overflow-hidden">
+    <section className="relative pt-32 md:pt-40 pb-24 px-4 md:px-8 w-full bg-white border-b-[4px] border-black overflow-hidden">
       
-      {/* Precision Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0000000a_1px,transparent_1px),linear-gradient(to_bottom,#0000000a_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      {/* Aggressive Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000015_2px,transparent_2px),linear-gradient(to_bottom,#00000015_2px,transparent_2px)] bg-[size:40px_40px]"></div>
       
-      {/* Radial fade to smooth the grid edges */}
-      <div className="absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,white_70%)]"></div>
-
-      <div className="relative z-10 w-full max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
+      <div className="relative z-10 w-full max-w-[85rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* Left: Copy */}
-        <div className="flex flex-col items-start text-left max-w-2xl">
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 border border-gray-300 bg-gray-50">
-            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span className="text-xs font-mono font-bold text-gray-700 uppercase tracking-wider">v2.0.0-beta</span>
+        <div className="flex flex-col items-start text-left max-w-xl bg-white p-6 border-[4px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 border-[2px] border-black bg-blue-600 text-white mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <span className="w-2 h-2 bg-white animate-pulse"></span>
+            <span className="text-[10px] font-mono font-black uppercase tracking-widest">CodeAudit Engine v2.0.0-beta</span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-black tracking-tighter text-gray-900 mb-6 leading-[1.05]">
-            Stop Shipping <br className="hidden lg:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-600 to-gray-900 bg-[length:200%_auto] animate-gradient">Blind.</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-black mb-6 leading-none uppercase">
+            Stop <br/>
+            Shipping <br/>
+            <span className="bg-black text-white px-3 py-1 inline-block mt-2 transform -rotate-1">Blind.</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed font-light border-l-2 border-gray-300 pl-4">
+          <p className="text-sm text-black font-bold mb-8 leading-relaxed border-l-[4px] border-blue-600 pl-4 py-2 bg-gray-50">
             Connect your repository and receive a comprehensive security, performance, and architecture audit in seconds. Uncover logic flaws that standard scanners miss.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mt-2">
             <Link 
               href="?waitlist=true"
               scroll={false}
-              className="w-full sm:w-auto bg-gray-900 text-white px-8 py-4 font-bold border border-gray-900 hover:bg-gray-800 transition-colors flex items-center justify-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)]"
+              className="w-full sm:w-auto bg-blue-600 text-white px-6 py-3 text-xs font-black border-[3px] border-black hover:bg-blue-700 transition-all flex items-center justify-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-tight"
             >
-              Initialize Scan <ArrowRight className="w-4 h-4" />
+              Initialize Scan <ArrowRight className="w-4 h-4 stroke-[3]" />
             </Link>
             <Link 
               href="/sample-report"
-              className="w-full sm:w-auto bg-white text-gray-900 border border-gray-300 px-8 py-4 font-bold hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+              className="w-full sm:w-auto bg-white text-black border-[3px] border-black px-6 py-3 text-xs font-black hover:bg-gray-100 transition-all flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase tracking-tight"
             >
-              View Documentation
+              View Docs
             </Link>
           </div>
         </div>
 
         {/* Right: Animated Terminal Output */}
-        <div className="w-full relative lg:pl-10">
-          <div className="bg-[#050505] border border-gray-800 p-6 relative overflow-hidden shadow-2xl group">
+        <div className="w-full relative mt-8 lg:mt-0">
+          <div className="bg-[#0a0a0a] border-[4px] border-black p-0 relative shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group max-w-xl mx-auto lg:mx-0">
             
             {/* Terminal Header */}
-            <div className="flex items-center justify-between mb-6 border-b border-gray-800 pb-4">
-              <div className="flex items-center gap-4">
-                <Terminal className="w-5 h-5 text-green-500" />
-                <span className="text-xs font-mono font-bold text-gray-500">codeaudit-cli --stdout</span>
+            <div className="flex items-center justify-between border-b-[4px] border-black bg-gray-200 p-3">
+              <div className="flex items-center gap-3">
+                <Terminal className="w-4 h-4 text-black" />
+                <span className="text-[10px] font-mono font-black text-black uppercase tracking-widest">codeaudit-cli --stdout</span>
               </div>
               <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/20 border border-red-500/50"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/20 border border-yellow-500/50"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/20 border border-green-500/50"></div>
+                <div className="w-3 h-3 bg-white border-[2px] border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+                <div className="w-3 h-3 bg-white border-[2px] border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
+                <div className="w-3 h-3 bg-black border-[2px] border-black shadow-[1px_1px_0px_0px_rgba(0,0,0,1)]"></div>
               </div>
             </div>
 
             {/* Terminal Lines */}
-            <div className="font-mono text-[11px] sm:text-xs leading-[1.8] tracking-tight min-h-[250px]">
+            <div className="font-mono text-[10px] sm:text-[11px] leading-[1.8] tracking-tight min-h-[260px] p-4 text-green-400">
               {codeLines.slice(0, visibleLines).map((line, i) => (
                 <motion.div 
                   initial={{ opacity: 0, x: -5 }}
@@ -98,12 +96,12 @@ const HeroSection = () => {
                   transition={{ duration: 0.1 }}
                   key={i} 
                   className={`
-                  ${line.type === 'cmd' ? 'text-green-400 font-bold mb-2' : ''}
+                  ${line.type === 'cmd' ? 'text-white font-bold mb-3 bg-blue-600 inline-block px-2' : ''}
                   ${line.type === 'log' ? 'text-gray-400' : ''}
-                  ${line.type === 'warn' ? 'text-yellow-500 mt-2' : ''}
-                  ${line.type === 'error' ? 'text-red-500 mt-2 font-bold' : ''}
-                  ${line.type === 'code' ? 'text-gray-500 ml-4 border-l border-gray-800 pl-4' : ''}
-                  ${line.type === 'code_error' ? 'text-red-400 bg-red-500/10 ml-4 border-l-2 border-red-500 pl-4 py-1' : ''}
+                  ${line.type === 'warn' ? 'text-black bg-yellow-400 font-bold px-2 inline-block mt-2 mb-1' : ''}
+                  ${line.type === 'error' ? 'text-white bg-red-600 font-bold px-2 inline-block mt-2 mb-1' : ''}
+                  ${line.type === 'code' ? 'text-gray-500 ml-3 border-l-[2px] border-gray-700 pl-3' : ''}
+                  ${line.type === 'code_error' ? 'text-red-400 bg-red-950/50 ml-3 border-l-[4px] border-red-600 pl-3 py-1 font-bold' : ''}
                 `}>
                   {line.text}
                 </motion.div>
@@ -115,23 +113,18 @@ const HeroSection = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: [0, 1, 0] }}
                   transition={{ repeat: Infinity, duration: 0.8 }}
-                  className="text-green-500 font-bold mt-2"
+                  className="text-white bg-white w-2 h-4 inline-block mt-1 align-middle"
                 >
-                  $ _
                 </motion.div>
               )}
               {visibleLines < codeLines.length && (
-                <div className="w-2 h-4 bg-gray-500 inline-block animate-pulse mt-1 ml-1"></div>
+                <div className="w-2 h-4 bg-white inline-block animate-pulse mt-1 align-middle ml-2"></div>
               )}
             </div>
             
             {/* Scan Line Effect */}
-            <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px] opacity-20"></div>
+            <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%)] bg-[length:100%_4px] opacity-20"></div>
           </div>
-          
-          {/* Decorative measuring lines */}
-          <div className="absolute top-10 right-4 w-4 h-4 border-t border-r border-gray-300"></div>
-          <div className="absolute bottom-10 lg:left-6 left-0 w-4 h-4 border-b border-l border-gray-300"></div>
         </div>
 
       </div>

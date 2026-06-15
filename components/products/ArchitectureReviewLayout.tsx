@@ -7,13 +7,14 @@ interface Props {
 }
 
 export default function ArchitectureReviewLayout({ product }: Props) {
-  // Assuming product has fields: name, tagline, description, features, price, etc.
-  
   return (
-    <div className="min-h-screen pt-32 pb-12 bg-gray-50 text-black font-mono px-4 sm:px-8 selection:bg-blue-200 selection:text-black">
-      <div className="max-w-6xl mx-auto border-[3px] border-black bg-white relative overflow-hidden">
+    <div className="min-h-screen pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white text-black font-mono px-4 sm:px-8 selection:bg-blue-200 selection:text-black">
+      {/* Background Grid */}
+      <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000015_2px,transparent_2px),linear-gradient(to_bottom,#00000015_2px,transparent_2px)] bg-[size:40px_40px] z-0"></div>
+
+      <div className="max-w-[85rem] mx-auto border-[4px] border-black bg-white relative overflow-hidden shadow-[12px_12px_0_0_#000] z-10">
         
-        {/* Blueprint Grid Background Pattern (CSS via inline style or classes) */}
+        {/* Blueprint Grid Background Pattern */}
         <div 
           className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
@@ -24,20 +25,20 @@ export default function ArchitectureReviewLayout({ product }: Props) {
 
         <div className="relative z-10">
           {/* Header Block */}
-          <header className="border-b-[3px] border-black bg-blue-50/50 flex flex-col md:flex-row">
-            <div className="p-4 border-b-[3px] md:border-b-0 md:border-r-[3px] border-black flex-1">
-              <h1 className="text-xl md:text-3xl font-bold uppercase tracking-tight mb-1 break-all sm:break-normal">
+          <header className="border-b-[4px] border-black bg-blue-600 flex flex-col md:flex-row text-white">
+            <div className="p-4 md:p-6 border-b-[4px] md:border-b-0 md:border-r-[4px] border-black flex-1">
+              <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-2 break-all sm:break-normal leading-[1]">
                 {product.h1 || 'Architecture Review'}
               </h1>
-              <p className="text-xs md:text-sm font-bold text-gray-600 uppercase">
+              <p className="text-[10px] md:text-xs font-bold text-gray-200 uppercase bg-black inline-block px-2 py-0.5">
                 {product.subheadline || 'System Design Analysis & Optimization'}
               </p>
             </div>
-            <div className="p-4 w-full md:w-48 flex flex-col justify-center bg-white">
-              <div className="text-[10px] font-bold uppercase mb-1 border-b border-black text-gray-500">Project ID</div>
-              <div className="text-sm font-bold">AR-9000</div>
-              <div className="text-[10px] font-bold uppercase mt-3 border-b border-black text-gray-500">Status</div>
-              <div className="text-xs font-bold text-blue-600">PENDING_REVIEW</div>
+            <div className="p-4 w-full md:w-56 flex flex-col justify-center bg-yellow-300 text-black border-l-[4px] border-black ml-[-4px]">
+              <div className="text-[10px] font-black uppercase mb-1 border-b-[2px] border-black text-black">Project ID</div>
+              <div className="text-xs md:text-sm font-black">AR-9000</div>
+              <div className="text-[10px] font-black uppercase mt-3 border-b-[2px] border-black text-black">Status</div>
+              <div className="text-[10px] md:text-xs font-black text-blue-700">PENDING_REVIEW</div>
             </div>
           </header>
 
@@ -45,37 +46,37 @@ export default function ArchitectureReviewLayout({ product }: Props) {
           <div className="grid grid-cols-1 lg:grid-cols-3">
             
             {/* Left Column (Details) */}
-            <div className="col-span-1 lg:col-span-2 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-black">
+            <div className="col-span-1 lg:col-span-2 border-b-[4px] lg:border-b-0 lg:border-r-[4px] border-black">
               
               {/* Description Block */}
-              <div className="p-4 border-b-[3px] border-black bg-white">
-                <h2 className="text-xs font-bold uppercase mb-2 bg-blue-100 inline-block px-2 py-1 border-[3px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="p-6 md:p-8 border-b-[4px] border-black bg-white">
+                <h2 className="text-[10px] md:text-xs font-black uppercase mb-4 bg-blue-600 text-white inline-block px-3 py-1 border-[4px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   1.0 Specification
                 </h2>
-                <p className="text-xs leading-relaxed font-medium">
+                <p className="text-xs md:text-sm leading-relaxed font-bold border-l-[4px] border-black pl-4 bg-gray-100 py-2">
                   {product.whatItDoes || 'A comprehensive tear-down of your application architecture. We evaluate scalability, security, performance bottlenecks, and technical debt. Delivered as a highly actionable engineering document.'}
                 </p>
               </div>
 
               {/* Features Block */}
-              <div className="p-4 bg-white">
-                <h2 className="text-xs font-bold uppercase mb-4 bg-blue-100 inline-block px-2 py-1 border-[3px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="p-6 md:p-8 bg-white">
+                <h2 className="text-[10px] md:text-xs font-black uppercase mb-6 bg-blue-600 text-white inline-block px-3 py-1 border-[4px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
                   2.0 Core Components
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {(product.checksFor || [
                     'Database Schema Audit',
                     'API Design Review',
                     'Infrastructure as Code',
                     'Security & Auth Patterns'
                   ]).map((feature, idx) => (
-                    <div key={idx} className="border-[3px] border-black p-2 relative bg-gray-50">
+                    <div key={idx} className="border-[4px] border-black p-4 relative bg-gray-100 shadow-[4px_4px_0_0_#000] hover:-translate-y-1 hover:shadow-[6px_6px_0_0_#000] transition-transform">
                       {/* Isometric corner accent */}
-                      <div className="absolute top-0 right-0 w-3 h-3 bg-black"></div>
-                      <div className="text-[10px] font-bold text-gray-500 mb-1 border-b border-black inline-block">
+                      <div className="absolute top-0 right-0 w-4 h-4 bg-black"></div>
+                      <div className="text-[10px] font-black text-gray-500 mb-2 border-b-[2px] border-black inline-block bg-white px-1">
                         FIG {idx + 1}
                       </div>
-                      <h3 className="font-bold text-xs">{feature}</h3>
+                      <h3 className="font-black text-[10px] md:text-xs uppercase">{feature}</h3>
                     </div>
                   ))}
                 </div>
@@ -83,41 +84,41 @@ export default function ArchitectureReviewLayout({ product }: Props) {
             </div>
 
             {/* Right Column (Sidebar/Action) */}
-            <div className="col-span-1 bg-gray-50 flex flex-col">
+            <div className="col-span-1 bg-white flex flex-col">
               
               {/* Info Block */}
-              <div className="p-4 border-b-[3px] border-black flex-1">
-                <h2 className="text-xs font-bold uppercase mb-3 bg-black text-white inline-block px-2 py-1">
+              <div className="p-6 md:p-8 border-b-[4px] border-black flex-1 bg-gray-100">
+                <h2 className="text-[10px] md:text-xs font-black uppercase mb-6 bg-black text-white inline-block px-3 py-1">
                   System Parameters
                 </h2>
-                <ul className="space-y-2 text-xs">
-                  <li className="flex justify-between border-b border-black pb-1">
-                    <span className="font-bold uppercase text-gray-600">Complexity</span>
-                    <span className="font-bold">High</span>
+                <ul className="space-y-4 text-[10px] md:text-xs font-bold">
+                  <li className="flex justify-between border-b-[2px] border-black pb-2">
+                    <span className="font-black uppercase text-gray-600">Complexity</span>
+                    <span className="font-black bg-red-500 text-white px-2 py-0.5">High</span>
                   </li>
-                  <li className="flex justify-between border-b border-black pb-1">
-                    <span className="font-bold uppercase text-gray-600">Format</span>
-                    <span className="font-bold">PDF / Web</span>
+                  <li className="flex justify-between border-b-[2px] border-black pb-2">
+                    <span className="font-black uppercase text-gray-600">Format</span>
+                    <span className="font-black bg-blue-600 text-white px-2 py-0.5">PDF / Web</span>
                   </li>
-                  <li className="flex justify-between border-b border-black pb-1">
-                    <span className="font-bold uppercase text-gray-600">Price</span>
-                    <span className="font-bold text-green-600">{'Included'}</span>
+                  <li className="flex justify-between border-b-[2px] border-black pb-2">
+                    <span className="font-black uppercase text-gray-600">Price</span>
+                    <span className="font-black text-green-600 bg-black px-2 py-0.5">{'Included'}</span>
                   </li>
                 </ul>
               </div>
 
               {/* Action Block */}
-              <div className="p-4 bg-white border-t-[3px] border-black mt-auto">
-                <h2 className="text-xs font-bold uppercase mb-2 border-b-[3px] border-black pb-1">
+              <div className="p-6 md:p-8 bg-yellow-300 mt-auto">
+                <h2 className="text-[10px] md:text-xs font-black uppercase mb-3 border-b-[4px] border-black pb-2">
                   Execute Build
                 </h2>
-                <p className="text-[10px] font-bold mb-4 text-gray-500 leading-relaxed">
+                <p className="text-[10px] md:text-xs font-bold mb-6 text-black leading-relaxed bg-white border-[4px] border-black p-2">
                   Initialize the waitlist sequence to secure your spot for the architecture review.
                 </p>
                 <Link 
                   href="?waitlist=true" 
                   scroll={false}
-                  className="block text-center bg-black text-white border-[3px] border-black px-3 py-2 text-xs font-bold uppercase hover:bg-white hover:text-black hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all"
+                  className="block text-center bg-black text-white border-[4px] border-black px-4 py-3 text-[10px] md:text-xs font-black uppercase hover:bg-white hover:text-black shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:translate-x-1 hover:-translate-y-1 transition-all tracking-widest"
                 >
                   [ Initialize ]
                 </Link>
@@ -126,9 +127,9 @@ export default function ArchitectureReviewLayout({ product }: Props) {
           </div>
           
           {/* Blueprint Footer */}
-          <footer className="border-t-[3px] border-black p-4 bg-black text-white flex justify-between items-center text-sm font-bold uppercase">
+          <footer className="border-t-[4px] border-black p-4 md:p-6 bg-black text-white flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
             <div>CodeAudit.dev © 2026</div>
-            <div>Rev 1.0.0</div>
+            <div className="border-[2px] border-white px-2 py-0.5">Rev 1.0.0</div>
           </footer>
         </div>
       </div>

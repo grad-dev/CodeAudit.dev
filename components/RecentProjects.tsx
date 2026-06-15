@@ -11,7 +11,8 @@ const findings = [
     file: "src/auth/jwt_service.ts:42",
     status: "Unresolved",
     icon: <AlertOctagon className="w-4 h-4 text-red-600" />,
-    badgeClass: "bg-red-100 text-red-700 border border-red-200",
+    badgeClass: "bg-red-500 text-white border-[2px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
+    rowBorderClass: "border-l-[6px] border-l-red-500",
     description: "A JWT signing secret was found directly in source code. If exposed, attackers could impersonate any user in the system.",
     fix: `// ❌ CRITICAL: Hardcoded secret
 const token = jwt.sign({ userId: user.id }, "dev_super_secret_key_123");
@@ -26,7 +27,8 @@ const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET);`
     file: "src/routes/login.js:18",
     status: "Unresolved",
     icon: <AlertTriangle className="w-4 h-4 text-orange-600" />,
-    badgeClass: "bg-orange-100 text-orange-700 border border-orange-200",
+    badgeClass: "bg-orange-500 text-black border-[2px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
+    rowBorderClass: "border-l-[6px] border-l-orange-500",
     description: "Authentication endpoints lack rate limiting, leaving the application vulnerable to automated credential stuffing attacks.",
     fix: `// ❌ HIGH: No rate limit on auth route
 app.post('/api/login', loginHandler);
@@ -42,7 +44,8 @@ app.post('/api/login', authLimiter, loginHandler);`
     file: "dist/static/js/main.bundle.js",
     status: "Warning",
     icon: <AlertCircle className="w-4 h-4 text-yellow-600" />,
-    badgeClass: "bg-yellow-100 text-yellow-700 border border-yellow-200",
+    badgeClass: "bg-yellow-400 text-black border-[2px] border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]",
+    rowBorderClass: "border-l-[6px] border-l-yellow-400",
     description: "The application ships over 2.8 MB of JavaScript on first load, severely impacting performance metrics and user experience.",
     fix: `// ❌ MEDIUM: Importing entire library
 import _ from 'lodash';
@@ -65,26 +68,26 @@ const RecentProjects = () => {
   };
 
   return (
-    <section className="py-24 px-4 md:px-6 max-w-[90rem] mx-auto w-full bg-white border-t border-gray-200">
+    <section className="py-24 px-4 md:px-8 max-w-[85rem] mx-auto w-full bg-gray-50 border-t-[4px] border-black">
       
-      <div className="mb-12 max-w-3xl">
-        <h2 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-3">
+      <div className="mb-12 max-w-3xl bg-black p-6 text-white border-[4px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+        <h2 className="text-[10px] font-black tracking-widest text-black bg-white px-2 py-1 uppercase mb-3 inline-block">
           Deep Inspection
         </h2>
-        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+        <h3 className="text-xl md:text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-[1]">
           Live Audit Log
         </h3>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-xs md:text-sm text-white font-bold leading-relaxed border-l-[4px] border-red-500 pl-4 bg-gray-900 py-2">
           See exactly what CodeAudit catches that standard linters miss. 
           No fluff—just raw, actionable security data.
         </p>
       </div>
 
       {/* The Audit Log Table */}
-      <div className="w-full border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm mb-12">
+      <div className="w-full border-[4px] border-black overflow-hidden bg-white mb-10 shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
         
         {/* Table Header */}
-        <div className="hidden md:grid grid-cols-12 gap-4 p-4 bg-gray-50 border-b border-gray-300 text-xs font-mono font-bold text-gray-500 uppercase tracking-wider">
+        <div className="hidden md:grid grid-cols-12 gap-4 p-5 bg-black border-b-[4px] border-black text-[10px] font-mono font-black text-white uppercase tracking-widest">
           <div className="col-span-2">Severity</div>
           <div className="col-span-3">Vulnerability_ID</div>
           <div className="col-span-5">File_Path</div>
@@ -97,56 +100,56 @@ const RecentProjects = () => {
             const isExpanded = expandedRow === item.id;
             
             return (
-              <div key={item.id} className="border-b border-gray-200 last:border-b-0">
+              <div key={item.id} className={`border-b-[4px] border-gray-900 last:border-b-0 ${item.rowBorderClass}`}>
                 {/* Row Clickable Area */}
                 <button 
                   onClick={() => toggleRow(item.id)}
-                  className={`w-full grid grid-cols-1 md:grid-cols-12 gap-4 p-4 text-left items-center transition-colors font-mono text-sm ${isExpanded ? 'bg-blue-50/30' : 'hover:bg-gray-50 bg-white'}`}
+                  className={`w-full grid grid-cols-1 md:grid-cols-12 gap-4 p-5 text-left items-center transition-colors font-mono text-xs md:text-sm ${isExpanded ? 'bg-blue-600 text-white' : 'hover:bg-gray-100 bg-white text-black'}`}
                 >
                   {/* Severity */}
                   <div className="col-span-1 md:col-span-2 flex items-center gap-2">
-                    {isExpanded ? <ChevronDown className="w-4 h-4 text-gray-400" /> : <ChevronRight className="w-4 h-4 text-gray-400" />}
-                    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-xs font-bold ${item.badgeClass}`}>
+                    {isExpanded ? <ChevronDown className={`w-4 h-4 ${isExpanded ? 'text-white' : 'text-black'}`} /> : <ChevronRight className={`w-4 h-4 ${isExpanded ? 'text-white' : 'text-black'}`} />}
+                    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-[10px] font-black uppercase ${item.badgeClass}`}>
                       {item.icon} {item.severity}
                     </span>
                   </div>
                   
                   {/* Vulnerability ID */}
-                  <div className="col-span-1 md:col-span-3 font-bold text-gray-900">
-                    {item.id}: <span className="font-normal text-gray-700">{item.title}</span>
+                  <div className="col-span-1 md:col-span-3 font-black text-[10px] md:text-xs">
+                    {item.id}: <span className="font-bold opacity-80">{item.title}</span>
                   </div>
 
                   {/* File Path */}
-                  <div className="col-span-1 md:col-span-5 text-gray-500 truncate hidden md:block">
+                  <div className="col-span-1 md:col-span-5 truncate hidden md:block font-bold text-[10px] md:text-xs">
                     {item.file}
                   </div>
 
                   {/* Status */}
-                  <div className="col-span-1 md:col-span-2 text-right font-bold text-gray-400 hidden md:block">
+                  <div className="col-span-1 md:col-span-2 text-right font-black uppercase hidden md:block text-[10px] md:text-xs">
                     {item.status}
                   </div>
                 </button>
 
                 {/* Expanded Content Area */}
                 {isExpanded && (
-                  <div className="bg-gray-50 border-t border-gray-200 p-6 md:p-8">
-                    <div className="max-w-4xl">
-                      <div className="mb-6">
-                        <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-2 font-mono">Detailed Analysis</h4>
-                        <p className="text-gray-700 leading-relaxed font-sans text-base">
+                  <div className="bg-gray-100 border-t-[4px] border-black p-6 md:p-10">
+                    <div className="max-w-3xl">
+                      <div className="mb-8 border-l-[4px] border-black pl-5">
+                        <h4 className="text-xs md:text-sm font-black text-black uppercase tracking-widest mb-3 font-mono bg-yellow-300 inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Detailed Analysis</h4>
+                        <p className="text-black leading-relaxed font-sans text-xs md:text-sm font-bold">
                           {item.description}
                         </p>
                       </div>
 
-                      <div>
-                        <h4 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-2 font-mono">Remediation Code</h4>
-                        <div className="bg-[#0d0d10] rounded-md border border-gray-800 p-4 overflow-x-auto">
-                          <pre className="text-sm font-mono leading-relaxed"><code className="text-gray-300">
+                      <div className="border-l-[4px] border-black pl-5">
+                        <h4 className="text-xs md:text-sm font-black text-black uppercase tracking-widest mb-3 font-mono bg-green-400 inline-block px-2 py-1 border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Remediation Code</h4>
+                        <div className="bg-black border-[4px] border-black p-5 overflow-x-auto shadow-[4px_4px_0px_0px_rgba(0,0,0,0.5)]">
+                          <pre className="text-[10px] md:text-xs font-mono leading-relaxed"><code className="text-white">
                             {item.fix.split('\n').map((line, i) => {
                                let colorClass = "text-gray-300";
-                               if (line.includes('❌')) colorClass = "text-red-400 font-bold";
-                               if (line.includes('✅')) colorClass = "text-green-400 font-bold";
-                               if (line.includes('const ') || line.includes('import ') || line.includes('app.')) colorClass = "text-blue-300";
+                               if (line.includes('❌')) colorClass = "text-red-500 font-bold bg-red-950/50 inline-block px-1";
+                               if (line.includes('✅')) colorClass = "text-green-400 font-bold bg-green-950/50 inline-block px-1";
+                               if (line.includes('const ') || line.includes('import ') || line.includes('app.')) colorClass = "text-blue-400 font-bold";
                                
                                return (
                                  <div key={i} className={colorClass}>{line || ' '}</div>
@@ -167,9 +170,9 @@ const RecentProjects = () => {
       <div>
          <Link 
             href="/sample-report"
-            className="inline-flex items-center gap-2 font-bold text-gray-900 hover:text-blue-600 transition-colors group font-mono text-sm uppercase tracking-wider"
+            className="inline-flex items-center gap-2 font-black text-black hover:bg-black hover:text-white transition-all group font-mono text-[10px] md:text-xs uppercase tracking-widest border-[4px] border-black px-4 py-3 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:translate-x-1 active:translate-y-1 active:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] bg-white"
           >
-            View Full Audit Log <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            View Full Audit Log <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform stroke-[3]" />
           </Link>
       </div>
 

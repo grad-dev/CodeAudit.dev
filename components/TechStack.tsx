@@ -7,7 +7,7 @@ const capabilities = [
     id: "SEC-CORE",
     title: "Security & Vulnerabilities",
     desc: "Detects exposed API keys, hardcoded credentials, insecure configurations, and vulnerable dependency versions before they reach production.",
-    icon: <ShieldAlert className="w-5 h-5 text-gray-500" />,
+    icon: <ShieldAlert className="w-5 h-5 text-white" />,
     status: "ACTIVE",
     link: "/products/security-scanner"
   },
@@ -15,7 +15,7 @@ const capabilities = [
     id: "PERF-CORE",
     title: "Performance Profiling",
     desc: "Identifies rendering bottlenecks, inefficient code patterns, large bundle sizes, and memory leaks in React/Next.js applications.",
-    icon: <Zap className="w-5 h-5 text-gray-500" />,
+    icon: <Zap className="w-5 h-5 text-white" />,
     status: "ACTIVE",
     link: "/products/performance-analyzer"
   },
@@ -23,7 +23,7 @@ const capabilities = [
     id: "ARCH-CORE",
     title: "Architectural Review",
     desc: "Visualizes code duplication, poor project structures, circular dependencies, and technical debt hotspots across the repository.",
-    icon: <Network className="w-5 h-5 text-gray-500" />,
+    icon: <Network className="w-5 h-5 text-white" />,
     status: "ACTIVE",
     link: "/products/architecture-review"
   },
@@ -31,7 +31,7 @@ const capabilities = [
     id: "AI-REVIEW",
     title: "AI-Generated Code Audit",
     desc: "LLMs generate code with subtle logic flaws. We detect 'vibecoded' mistakes and suggest deterministic, production-ready refinements.",
-    icon: <Sparkles className="w-5 h-5 text-gray-500" />,
+    icon: <Sparkles className="w-5 h-5 text-white" />,
     status: "ACTIVE",
     link: "/products/ai-code-review"
   }
@@ -39,52 +39,55 @@ const capabilities = [
 
 const TechStack = () => {
   return (
-    <section id="what-we-analyze" className="py-24 px-4 md:px-6 max-w-[90rem] mx-auto w-full bg-white border-b border-gray-200">
+    <section id="what-we-analyze" className="py-24 px-4 md:px-8 max-w-[85rem] mx-auto w-full bg-white border-t-[4px] border-black">
       
-      <div className="mb-12 max-w-3xl">
-        <h2 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-3">
+      <div className="mb-12 max-w-3xl bg-yellow-300 p-6 border-[4px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+        <h2 className="text-[10px] font-black tracking-widest text-white uppercase mb-3 bg-black px-2 py-1 inline-block border-[2px] border-black">
           Analysis Engine
         </h2>
-        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+        <h3 className="text-xl md:text-3xl font-black text-black mb-4 tracking-tighter uppercase leading-[1]">
           Capability Matrix
         </h3>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-xs md:text-sm text-black font-bold leading-relaxed border-l-[4px] border-black pl-4 bg-yellow-400 py-2">
           The core scanning vectors executed during a repository audit.
         </p>
       </div>
 
-      <div className="border-t border-l border-gray-300">
+      <div className="border-[4px] border-black bg-white shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
         {capabilities.map((cap, index) => (
-          <div key={index} className="grid grid-cols-1 md:grid-cols-12 border-b border-gray-300 group hover:bg-gray-50 transition-colors">
+          <div key={index} className="grid grid-cols-1 md:grid-cols-12 border-b-[4px] border-black last:border-b-0 hover:bg-yellow-300 transition-colors group">
             
             {/* ID & Status */}
-            <div className="md:col-span-2 p-6 md:border-r border-gray-300 flex flex-row md:flex-col justify-between md:justify-start gap-4">
-               <span className="font-mono text-xs font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+            <div className="md:col-span-2 p-5 md:border-r-[4px] border-black flex flex-row md:flex-col justify-between md:justify-start gap-3 bg-black">
+               <span className="font-mono text-xs font-black text-white">
                  {cap.id}
                </span>
-               <span className="font-mono text-[10px] font-bold text-green-600 bg-green-50 px-2 py-0.5 border border-green-200 uppercase w-fit">
+               <span className="font-mono text-[9px] font-black text-black bg-green-400 px-2 py-1 border-[2px] border-white uppercase w-fit inline-flex items-center shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
+                 <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse inline-block mr-1"></span>
                  {cap.status}
                </span>
             </div>
 
             {/* Content */}
-            <div className="md:col-span-7 p-6 md:border-r border-gray-300 flex flex-col justify-center">
+            <div className="md:col-span-7 p-5 md:border-r-[4px] border-black flex flex-col justify-center bg-white group-hover:bg-yellow-300 transition-colors">
               <div className="flex items-center gap-3 mb-2">
-                {cap.icon}
-                <h4 className="text-lg font-bold text-gray-900">{cap.title}</h4>
+                <div className="bg-black p-1.5 border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                  {cap.icon}
+                </div>
+                <h4 className="text-base font-black text-black uppercase">{cap.title}</h4>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed">
+              <p className="text-black font-bold text-xs leading-relaxed">
                 {cap.desc}
               </p>
             </div>
 
             {/* Action */}
-            <div className="md:col-span-3 p-6 flex items-center justify-start md:justify-center">
+            <div className="md:col-span-3 p-5 flex items-center justify-start md:justify-center bg-white group-hover:bg-yellow-300 transition-colors">
               <Link 
                 href={cap.link} 
-                className="inline-flex items-center gap-2 text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors"
+                className="inline-flex items-center gap-2 bg-white text-black border-[4px] border-black px-4 py-3 text-[10px] md:text-xs font-black uppercase hover:bg-black hover:text-white transition-all font-mono shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] w-full justify-center md:w-auto"
               >
-                View Module <ArrowRight className="w-4 h-4" />
+                View Module <ArrowRight className="w-4 h-4 stroke-[3]" />
               </Link>
             </div>
 

@@ -139,65 +139,78 @@ export default async function ComparePage({ params }: { params: Promise<{ compet
   };
 
   return (
-    <div className="pt-32 pb-24 bg-white font-mono text-black">
+    <div className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-white min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto mb-16 border-b border-gray-300 pb-8">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-black mb-6 uppercase">
+      
+      {/* Background Grid */}
+      <div className="fixed inset-0 pointer-events-none bg-[linear-gradient(to_right,#00000015_2px,transparent_2px),linear-gradient(to_bottom,#00000015_2px,transparent_2px)] bg-[size:40px_40px] z-0"></div>
+
+      <div className="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Header Section */}
+        <div className="max-w-3xl mx-auto mb-12 bg-black text-white p-6 md:p-10 border-[4px] border-black shadow-[8px_8px_0_0_rgba(0,0,255,1)]">
+          <div className="inline-flex items-center gap-2 px-2 py-1 bg-white text-black border-[2px] border-black mb-4 shadow-[2px_2px_0_0_rgba(255,0,0,1)]">
+            <span className="text-[10px] font-mono font-black uppercase tracking-widest text-black">TOOL COMPARISON</span>
+          </div>
+          <h1 className="text-xl md:text-2xl font-black tracking-tighter text-white mb-4 uppercase leading-[1]">
             CodeAudit.dev vs {data.name}: Which Is Right for You?
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-[10px] md:text-xs font-bold text-gray-300 leading-relaxed border-l-[4px] border-yellow-300 pl-4 py-2">
             A factual comparison to help you choose the right code analysis tool for your workflow.
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto border border-gray-300 mb-16 bg-white overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+        {/* Comparison Table */}
+        <div className="max-w-5xl mx-auto border-[4px] border-black mb-12 bg-white overflow-x-auto shadow-[12px_12px_0_0_#000]">
+          <table className="w-full text-left border-collapse min-w-[800px]">
             <thead>
-              <tr className="bg-gray-100 border-b border-gray-300">
-                <th className="py-4 px-6 font-bold text-black border-r border-gray-300 uppercase">Feature</th>
-                <th className="py-4 px-6 font-bold text-black border-r border-gray-300 uppercase">CodeAudit.dev</th>
-                <th className="py-4 px-6 font-bold text-black uppercase">{data.name}</th>
+              <tr className="bg-yellow-300 border-b-[4px] border-black">
+                <th className="py-4 px-6 font-black text-black border-r-[4px] border-black uppercase tracking-widest text-xs w-1/4">Feature</th>
+                <th className="py-4 px-6 font-black text-black border-r-[4px] border-black uppercase tracking-widest text-xs w-3/8 bg-blue-600 text-white">CodeAudit.dev</th>
+                <th className="py-4 px-6 font-black text-black uppercase tracking-widest text-xs w-3/8">{data.name}</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-300">
+            <tbody className="divide-y-[4px] divide-black">
               {data.features.map((item, idx) => (
-                <tr key={idx} className="hover:bg-gray-50 transition-colors">
-                  <td className="py-4 px-6 text-black font-bold border-r border-gray-300">{item.feature}</td>
-                  <td className="py-4 px-6 text-black border-r border-gray-300">{item.codeAudit}</td>
-                  <td className="py-4 px-6 text-gray-600">{item.competitor}</td>
+                <tr key={idx} className="hover:bg-gray-100 transition-colors">
+                  <td className="py-4 px-6 text-black font-black uppercase text-[10px] tracking-widest border-r-[4px] border-black">{item.feature}</td>
+                  <td className="py-4 px-6 text-black font-bold text-xs border-r-[4px] border-black leading-relaxed">{item.codeAudit}</td>
+                  <td className="py-4 px-6 text-gray-600 font-bold text-xs leading-relaxed">{item.competitor}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 border border-gray-300 mb-16 divide-y md:divide-y-0 md:divide-x divide-gray-300">
-          <div className="p-8 bg-white">
-            <h2 className="text-2xl font-bold text-black mb-4 uppercase border-b border-gray-300 pb-2">Who {data.name} is built for</h2>
-            <p className="text-gray-700 leading-relaxed">{data.whoItsFor}</p>
+        {/* Who it's for */}
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0 border-[4px] border-black mb-12 shadow-[12px_12px_0_0_#000]">
+          <div className="p-6 md:p-10 bg-white border-b-[4px] md:border-b-0 md:border-r-[4px] border-black flex flex-col h-full">
+            <h2 className="text-base font-black text-black mb-4 uppercase inline-block bg-gray-200 border-[2px] border-black px-3 py-1 shadow-[2px_2px_0_0_#000]">Who {data.name} is built for</h2>
+            <p className="text-black text-[10px] md:text-xs font-bold leading-relaxed">{data.whoItsFor}</p>
           </div>
-          <div className="p-8 bg-white">
-            <h2 className="text-2xl font-bold text-black mb-4 uppercase border-b border-gray-300 pb-2">Who CodeAudit.dev is built for</h2>
-            <p className="text-gray-700 leading-relaxed">{data.whoWeAreFor}</p>
+          <div className="p-6 md:p-10 bg-blue-50 flex flex-col h-full">
+            <h2 className="text-base font-black text-black mb-4 uppercase inline-block bg-blue-300 border-[2px] border-black px-3 py-1 shadow-[2px_2px_0_0_#000]">Who CodeAudit.dev is built for</h2>
+            <p className="text-black text-[10px] md:text-xs font-bold leading-relaxed">{data.whoWeAreFor}</p>
           </div>
         </div>
 
-        <div className="max-w-3xl mx-auto bg-white border border-gray-300 p-8 mb-20">
-          <h2 className="text-2xl font-bold text-black mb-4 uppercase border-b border-gray-300 pb-2">When you might use both</h2>
-          <p className="text-gray-700 leading-relaxed mb-0">{data.whenToUseBoth}</p>
+        {/* When to use both */}
+        <div className="max-w-4xl mx-auto bg-white border-[4px] border-black p-6 md:p-10 mb-16 shadow-[8px_8px_0_0_#000]">
+          <h2 className="text-lg font-black text-black mb-4 uppercase border-b-[4px] border-black pb-2">When you might use both</h2>
+          <p className="text-black text-[10px] md:text-xs font-bold leading-relaxed border-l-[4px] border-red-500 pl-4 py-2 bg-gray-100 mb-0">{data.whenToUseBoth}</p>
         </div>
 
-        <div className="bg-gray-100 border border-black p-12 max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-black mb-4 uppercase">Ready to audit your code?</h2>
-          <p className="text-xl text-gray-700 mb-8 max-w-2xl">
+        {/* CTA */}
+        <div className="bg-yellow-300 border-[4px] border-black p-8 md:p-12 max-w-4xl mx-auto shadow-[12px_12px_0_0_#000] text-center mt-12">
+          <h2 className="text-xl md:text-2xl font-black text-black mb-4 uppercase tracking-tighter leading-[1]">Ready to audit your code?</h2>
+          <p className="text-[10px] md:text-xs text-black font-bold mb-8 max-w-2xl mx-auto leading-relaxed border-[4px] border-black bg-white p-3">
             Get instant visibility into security, performance, and architecture issues. Join the waitlist today.
           </p>
-          <Link href="?waitlist=true" scroll={false} className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-gray-900 hover:bg-black transition-colors duration-200 border border-black uppercase">
-            Join the CodeAudit.dev Waitlist
+          <Link href="?waitlist=true" scroll={false} className="inline-flex items-center justify-center px-8 py-4 text-xs md:text-sm font-black text-white bg-black hover:bg-gray-900 transition-colors border-[4px] border-black shadow-[6px_6px_0_0_rgba(255,255,255,1)] hover:translate-x-1 hover:-translate-y-1 hover:shadow-[10px_10px_0_0_rgba(255,255,255,1)] uppercase tracking-widest">
+            JOIN WAITLIST
           </Link>
         </div>
       </div>

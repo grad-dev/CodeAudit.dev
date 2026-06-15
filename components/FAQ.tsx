@@ -48,46 +48,46 @@ const FAQ = ({ faqs = defaultFaqs }: FAQProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 px-4 md:px-6 max-w-[90rem] mx-auto w-full bg-white border-t border-gray-200">
+    <section id="faq" className="py-24 px-4 md:px-8 max-w-[85rem] mx-auto w-full bg-white border-t-[4px] border-black">
       
-      <div className="mb-12 max-w-3xl mx-auto text-center">
-        <h2 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-3">
+      <div className="mb-12 max-w-3xl bg-blue-600 p-6 text-white border-[4px] border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
+        <h2 className="text-[10px] font-black tracking-widest text-white bg-black px-2 py-1 uppercase mb-3 inline-block border-[2px] border-black">
           Documentation
         </h2>
-        <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+        <h3 className="text-xl md:text-3xl font-black text-white mb-4 tracking-tighter uppercase leading-[1]">
           Frequently Asked Questions
         </h3>
-        <p className="text-lg text-gray-600 leading-relaxed">
+        <p className="text-xs md:text-sm text-white font-bold leading-relaxed border-l-[4px] border-black pl-4 bg-blue-700 py-2">
           Technical details and platform capabilities.
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto border-t border-gray-300">
+      <div className="max-w-3xl mx-auto border-[4px] border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] bg-white">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
           return (
-            <div key={index} className="border-b border-gray-300 bg-white">
+            <div key={index} className="border-b-[4px] border-black last:border-b-0 bg-white">
               <button
                 onClick={() => setOpenIndex(isOpen ? null : index)}
-                className="w-full flex items-center justify-between py-6 px-4 md:px-6 text-left hover:bg-gray-50 transition-colors group"
+                className={`w-full flex items-center justify-between py-5 px-5 text-left transition-colors group ${isOpen ? 'bg-yellow-300' : 'hover:bg-gray-100'}`}
               >
-                <div className="flex items-center gap-6">
-                   <span className="font-mono text-xs font-bold text-gray-400 hidden sm:block w-16">
+                <div className="flex items-center gap-4">
+                   <span className="font-mono text-[10px] font-black text-white bg-black px-2 py-1 hidden sm:block w-fit uppercase tracking-widest border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)]">
                      {faq.id || `FAQ-0${index + 1}`}
                    </span>
-                   <span className={`text-lg md:text-xl font-bold transition-colors ${isOpen ? 'text-gray-900' : 'text-gray-800 group-hover:text-blue-600'}`}>
+                   <span className={`text-base font-black uppercase tracking-tight transition-colors ${isOpen ? 'text-black' : 'text-black group-hover:text-blue-600'}`}>
                      {faq.question}
                    </span>
                 </div>
                 
-                <div className="text-gray-400 ml-4">
-                  {isOpen ? <Minus className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
+                <div className={`ml-4 p-1.5 border-[2px] border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] ${isOpen ? 'bg-white text-black' : 'bg-black text-white group-hover:translate-x-[2px] group-hover:translate-y-[2px] group-hover:shadow-none transition-all'}`}>
+                  {isOpen ? <Minus className="w-4 h-4 stroke-[3]" /> : <Plus className="w-4 h-4 stroke-[3]" />}
                 </div>
               </button>
               
               {isOpen && (
-                <div className="px-4 md:px-6 pb-8 ml-0 sm:ml-[5.5rem] max-w-2xl">
-                  <p className="text-gray-600 text-base leading-relaxed">
+                <div className="px-5 pb-6 ml-0 sm:ml-[4.5rem] max-w-xl bg-yellow-300">
+                  <p className="text-black text-xs md:text-sm font-bold leading-relaxed border-l-[4px] border-black pl-4 py-2 bg-white">
                     {faq.answer}
                   </p>
                 </div>
