@@ -26,10 +26,27 @@ export function generateMetadata({ params }: ProductPageProps): Metadata {
   
   if (!product) return { title: 'Product Not Found' };
 
+  const url = `https://codeaudit.dev/products/${product.slug}`;
+
   return {
     title: product.seo.title,
     description: product.seo.description,
-    alternates: { canonical: `https://codeaudit.dev/products/${product.slug}` },
+    alternates: { canonical: url },
+    openGraph: {
+      title: product.seo.title,
+      description: product.seo.description,
+      url: url,
+      siteName: 'CodeAudit',
+      images: ["/og-image.png"],
+      locale: 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: product.seo.title,
+      description: product.seo.description,
+      images: ["/og-image.png"],
+    },
   };
 }
 

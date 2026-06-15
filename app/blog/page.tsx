@@ -29,8 +29,7 @@ export default function BlogIndex() {
               <tr className="bg-yellow-300 text-black uppercase text-xs md:text-sm tracking-widest border-b-[4px] border-black font-black">
                 <th className="p-4 border-r-[4px] border-black font-black w-1/4">Date</th>
                 <th className="p-4 border-r-[4px] border-black font-black w-1/2">Title</th>
-                <th className="p-4 border-r-[4px] border-black font-black w-1/6">Category</th>
-                <th className="p-4 font-black text-center w-1/12">Action</th>
+                <th className="p-4 font-black w-1/4">Category</th>
               </tr>
             </thead>
             <tbody className="divide-y-[4px] divide-black">
@@ -42,12 +41,7 @@ export default function BlogIndex() {
                       {post.title}
                     </Link>
                   </td>
-                  <td className="p-4 border-r-[4px] border-black uppercase text-[10px] md:text-xs font-bold">{post.category}</td>
-                  <td className="p-4 text-center">
-                    <Link href={`/blog/${post.slug}`} className="inline-block bg-white text-black border-[4px] border-black px-3 py-1 font-black uppercase hover:bg-black hover:text-white hover:translate-x-1 hover:-translate-y-1 hover:shadow-[4px_4px_0_0_#000] transition-all whitespace-nowrap text-[10px] md:text-xs">
-                      [ READ ]
-                    </Link>
-                  </td>
+                  <td className="p-4 uppercase text-[10px] md:text-xs font-bold">{post.category}</td>
                 </tr>
               ))}
             </tbody>
