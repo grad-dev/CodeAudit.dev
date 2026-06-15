@@ -46,7 +46,7 @@ export default function SampleReportPage() {
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 border-b border-black pb-8">
-          <h1 className="text-4xl font-bold text-black mb-4 uppercase">System_Audit_Report</h1>
+          <h1 className="text-4xl font-bold text-black mb-4 uppercase">System Audit Report</h1>
           <p className="text-xl text-gray-600">
             {'>'} OUTPUT LOG: Example repository scan results.
           </p>
@@ -68,7 +68,7 @@ export default function SampleReportPage() {
           <div className="p-6 sm:p-8 space-y-12 bg-white text-black">
             <section>
               <h3 className="text-xl font-bold text-black mb-6 uppercase border-b border-black pb-2">
-                [1] Security_Findings
+                [1] Security Findings
               </h3>
               
               <div className="space-y-6">
@@ -104,7 +104,7 @@ export default function SampleReportPage() {
 
             <section>
               <h3 className="text-xl font-bold text-black mb-6 uppercase border-b border-black pb-2">
-                [2] AI-Generated_Code_Review
+                [2] AI-Generated Code Review
               </h3>
               
               <div className="border border-black p-5 relative">
@@ -124,7 +124,7 @@ export default function SampleReportPage() {
 
             <section>
               <h3 className="text-xl font-bold text-black mb-6 uppercase border-b border-black pb-2">
-                [3] AI_Fix_Prompt_Generation
+                [3] AI Fix Prompt Generation
               </h3>
               <p className="text-black mb-4 uppercase">{'>'} Copy payload to agent</p>
               

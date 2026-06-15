@@ -108,7 +108,7 @@ export default function FixPromptsLayout({ product }: { product: ProductData }) 
             <span className="animate-pulse w-3 h-5 bg-green-400"></span>
           </div>
           <Link href="?waitlist=true" scroll={false} className="border-[4px] border-black bg-white text-black px-6 py-4 text-xs md:text-sm font-black uppercase hover:bg-gray-100 hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all flex items-center justify-center text-center tracking-widest">
-            EXECUTE_WAITLIST_JOIN
+            Join Waitlist
           </Link>
         </div>
       </div>

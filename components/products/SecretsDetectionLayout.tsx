@@ -20,11 +20,11 @@ export default function SecretsDetectionLayout({ product }: { product: ProductDa
 
         <div className="space-y-6 text-sm leading-relaxed max-w-4xl mx-auto">
           <p className="bg-gray-100 p-4 border-[4px] border-black font-bold text-xs md:text-sm">
-            <span className="text-black font-black uppercase tracking-widest mr-2 border-b-[2px] border-black pb-1">CLASSIFIED MEMO:</span> {product.whatItDoes}
+            <span className="text-black font-black uppercase tracking-widest mr-2 border-b-[2px] border-black pb-1">Overview:</span> {product.whatItDoes}
           </p>
 
           <div className="border-[4px] border-black p-5 md:p-8 bg-white shadow-[6px_6px_0_0_#000]">
-            <h2 className="text-sm md:text-base font-black mb-4 uppercase underline decoration-[4px] underline-offset-4 tracking-widest">Threat Vectors Detected</h2>
+            <h2 className="text-sm md:text-base font-black mb-4 uppercase underline decoration-[4px] underline-offset-4 tracking-widest">What We Check For</h2>
             <ul className="list-none space-y-3 font-bold text-xs md:text-sm">
               {product.checksFor?.map((check, idx) => (
                 <li key={idx} className="flex items-start">
@@ -39,7 +39,7 @@ export default function SecretsDetectionLayout({ product }: { product: ProductDa
 
           {product.exampleFinding && (
             <div className="border-[4px] border-black p-6 md:p-8 bg-white border-dashed shadow-[6px_6px_0_0_#000]">
-              <h2 className="text-sm md:text-base font-black mb-6 uppercase text-red-600 tracking-widest border-b-[4px] border-red-600 pb-2">Incident Report</h2>
+              <h2 className="text-sm md:text-base font-black mb-6 uppercase text-red-600 tracking-widest border-b-[4px] border-red-600 pb-2">Sample Finding</h2>
               <div className="space-y-4">
                 <p className="font-black uppercase text-[10px] md:text-xs">Severity: <span className="bg-red-600 text-white select-none px-3 py-1 ml-2 border-[2px] border-black">{product.exampleFinding.severity}</span></p>
                 <p className="font-black uppercase border-b-[4px] border-black pb-3 text-[10px] md:text-xs">Title: <span className="ml-2 font-black text-black">{product.exampleFinding.title}</span></p>
@@ -56,7 +56,7 @@ export default function SecretsDetectionLayout({ product }: { product: ProductDa
             <p className="font-black uppercase mb-6 text-sm md:text-base">{product.workflowDescription}</p>
             <br />
             <Link href="?waitlist=true" scroll={false} className="inline-block px-8 py-4 bg-black text-white font-black border-[4px] border-black hover:bg-white hover:text-black uppercase text-[10px] md:text-xs shadow-[8px_8px_0px_0px_rgba(255,0,0,1)] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] tracking-widest transition-all">
-              DECRYPT PROJECT
+              Audit My Code
             </Link>
           </div>
         </div>

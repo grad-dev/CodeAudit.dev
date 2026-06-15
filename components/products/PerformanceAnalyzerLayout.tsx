@@ -22,7 +22,7 @@ export default function PerformanceAnalyzerLayout({ product }: { product: Produc
           </div>
           <div className="flex-shrink-0 w-full lg:w-auto">
             <Link href="?waitlist=true" scroll={false} className="block w-full text-center bg-black hover:bg-white text-white hover:text-black font-black py-4 px-8 border-[4px] border-black text-xs md:text-sm uppercase transition-colors whitespace-nowrap shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[6px] hover:translate-y-[6px] hover:shadow-none tracking-widest">
-              Initialize Audit
+              Audit My Code
             </Link>
           </div>
         </div>
@@ -45,13 +45,13 @@ export default function PerformanceAnalyzerLayout({ product }: { product: Produc
           {/* Left Side: Checks Table */}
           <div className="w-full lg:w-1/2 border-b-[4px] lg:border-b-0 lg:border-r-[4px] border-black flex flex-col">
             <div className="bg-black text-white p-4 border-b-[4px] border-black uppercase text-xs md:text-sm font-black tracking-widest">
-              Analysis Capabilities
+              What We Check For
             </div>
             <div className="flex flex-col bg-white flex-grow">
               {product.checksFor?.map((check, idx) => (
                 <div key={idx} className="flex border-b-[4px] border-black last:border-b-0 hover:bg-yellow-100 transition-colors">
                   <div className="w-16 flex-shrink-0 border-r-[4px] border-black p-4 font-black text-black bg-gray-200 flex items-center justify-center text-[10px] md:text-xs">
-                    {(idx + 1).toString().padStart(2, '0')}
+                    •
                   </div>
                   <div className="p-4 w-full font-black uppercase text-[10px] md:text-xs flex items-center">
                     {check}
@@ -84,7 +84,7 @@ export default function PerformanceAnalyzerLayout({ product }: { product: Produc
               )}
               
               <div className="mt-auto">
-                <h2 className="text-sm md:text-base font-black text-black uppercase tracking-widest block mb-4 border-b-[4px] border-black pb-2">Integration Workflow</h2>
+                <h2 className="text-sm md:text-base font-black text-black uppercase tracking-widest block mb-4 border-b-[4px] border-black pb-2">How it works</h2>
                 <p className="text-[10px] md:text-xs font-bold p-4 border-[4px] border-black bg-yellow-300 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] leading-relaxed">
                   {product.workflowDescription}
                 </p>
@@ -96,7 +96,7 @@ export default function PerformanceAnalyzerLayout({ product }: { product: Produc
 
         {/* Footer / FAQ Band */}
         <div className="w-full bg-black text-white p-6 md:p-8">
-          <h2 className="text-sm md:text-base font-black text-white uppercase tracking-widest block mb-6 border-b-[4px] border-gray-700 pb-3">Knowledge Base Queries</h2>
+          <h2 className="text-sm md:text-base font-black text-white uppercase tracking-widest block mb-6 border-b-[4px] border-gray-700 pb-3">FAQ</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {product.faqs.map((faq, idx) => (
               <div key={idx} className="border-[4px] border-gray-700 bg-gray-900 p-5 hover:border-white transition-colors">

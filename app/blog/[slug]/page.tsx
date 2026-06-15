@@ -95,7 +95,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
       />
       <div className="container px-4 mx-auto max-w-4xl">
         <Link href="/blog" className="inline-block border-[4px] border-black px-4 py-2 text-[10px] md:text-xs font-black uppercase hover:bg-black hover:text-white mb-8 transition-none shadow-[4px_4px_0_0_#000] hover:translate-x-1 hover:-translate-y-1 hover:shadow-none">
-          [ BACK TO SYSTEM.LOG ]
+          ← Back to Blog
         </Link>
         
         <header className="mb-12 border-[4px] border-black p-6 md:p-10 bg-white shadow-[8px_8px_0_0_#000]">

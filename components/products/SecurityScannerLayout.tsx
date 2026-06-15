@@ -12,7 +12,7 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
         <div className="border-b-[4px] border-black p-6 md:p-8 bg-black text-white flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
             <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none mb-2">{product.h1}</h1>
-            <p className="text-red-600 uppercase text-xs font-black tracking-widest mt-2">Incident Report // Classified</p>
+            <p className="text-red-600 uppercase text-xs font-black tracking-widest mt-2">Security Findings</p>
           </div>
           <div className="text-left md:text-right w-full md:w-auto border-t-[2px] border-gray-800 md:border-none pt-4 md:pt-0">
             
@@ -25,36 +25,35 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
           {/* Column 1: Briefing */}
           <div className="p-6 md:p-8 bg-white flex flex-col h-full">
             <div className="mb-10">
-              <h2 className="text-sm md:text-base font-black text-black mb-3 uppercase tracking-widest border-b-[4px] border-black pb-2">Executive Summary</h2>
+              <h2 className="text-sm md:text-base font-black text-black mb-3 uppercase tracking-widest border-b-[4px] border-black pb-2">Overview</h2>
               <p className="text-xs md:text-sm leading-relaxed font-bold border-l-[4px] border-red-600 pl-4 bg-red-50 py-2">{product.subheadline}</p>
             </div>
             
             <div className="mb-10 flex-grow">
-              <h2 className="text-sm md:text-base font-black text-black mb-3 uppercase tracking-widest border-b-[4px] border-black pb-2">Operational Scope</h2>
               <p className="text-xs md:text-sm leading-relaxed font-bold">{product.whatItDoes}</p>
             </div>
 
             <div className="mt-auto pt-6">
               <Link href="?waitlist=true" scroll={false} className="inline-block w-full text-center bg-red-600 hover:bg-white text-white hover:text-black font-black py-4 px-6 border-[4px] border-black uppercase transition-colors shadow-[6px_6px_0_0_rgba(0,0,0,1)] hover:translate-x-1 hover:-translate-y-1 hover:shadow-[8px_8px_0_0_rgba(0,0,0,1)] tracking-widest text-xs md:text-sm">
-                Deploy Scanner
+                Audit My Code
               </Link>
             </div>
           </div>
 
           {/* Column 2: Detection Capabilities */}
           <div className="p-6 md:p-8 bg-gray-100 flex flex-col h-full">
-            <h2 className="text-sm md:text-base font-black text-black mb-6 uppercase tracking-widest border-b-[4px] border-black pb-2">Active Heuristics</h2>
+            <h2 className="text-sm md:text-base font-black text-black mb-6 uppercase tracking-widest border-b-[4px] border-black pb-2">What We Check For</h2>
             <ul className="space-y-4 flex-grow font-bold text-xs md:text-sm">
               {product.checksFor?.map((check, idx) => (
                 <li key={idx} className="flex items-start bg-white p-3 border-[4px] border-black shadow-[4px_4px_0_0_#000]">
-                  <span className="text-red-600 mr-3 font-black bg-red-100 px-1 border-[2px] border-red-600">[{String(idx + 1).padStart(2, '0')}]</span>
+                  <span className="text-red-600 mr-3 font-black text-lg leading-none mt-[-2px]">•</span>
                   <span className="font-black uppercase mt-0.5">{check}</span>
                 </li>
               ))}
             </ul>
             
             <div className="mt-10 pt-8 border-t-[4px] border-black border-dashed">
-              <h2 className="text-sm md:text-base font-black text-black mb-4 uppercase tracking-widest border-b-[4px] border-black pb-2">Integration Workflow</h2>
+              <h2 className="text-sm md:text-base font-black text-black mb-4 uppercase tracking-widest border-b-[4px] border-black pb-2">How it works</h2>
               <p className="text-xs bg-black text-green-400 p-5 border-[4px] border-black leading-relaxed font-mono shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]">
                 {product.workflowDescription}
               </p>
@@ -81,7 +80,7 @@ export default function SecurityScannerLayout({ product }: { product: ProductDat
             )}
             
             <div className="mt-auto">
-              <h2 className="text-sm md:text-base font-black text-black mb-6 uppercase tracking-widest border-b-[4px] border-black pb-2">Query Logs (FAQ)</h2>
+              <h2 className="text-sm md:text-base font-black text-black mb-6 uppercase tracking-widest border-b-[4px] border-black pb-2">FAQ</h2>
               <div className="space-y-6">
                 {product.faqs.map((faq, idx) => (
                   <div key={idx} className="border-[4px] border-black p-4 bg-gray-50 hover:bg-yellow-50 transition-colors shadow-[4px_4px_0_0_#000]">

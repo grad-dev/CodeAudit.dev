@@ -63,10 +63,7 @@ export default function StackPage({ params }: { params: { stack: string } }) {
         
         {/* Header Section */}
         <div className="text-left mb-12 max-w-3xl bg-white p-6 md:p-8 border-[4px] border-black shadow-[8px_8px_0_0_#000]">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-black border-[2px] border-black mb-4 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-white">
-            <span className="w-2 h-2 bg-yellow-300 animate-pulse"></span>
-            <span className="text-[10px] md:text-xs font-black uppercase tracking-widest">{stack.name} AUDIT</span>
-          </div>
+
           
           <h1 className="text-xl md:text-2xl font-black tracking-tighter mb-4 uppercase text-black leading-[1.1] bg-yellow-300 inline-block px-3 py-1 border-[4px] border-black">
             Security & Code Audit for {stack.name} Projects
@@ -80,7 +77,7 @@ export default function StackPage({ params }: { params: { stack: string } }) {
               scroll={false}
               className="inline-flex items-center justify-center bg-black text-white px-6 py-3 text-xs md:text-sm font-black uppercase tracking-widest border-[4px] border-black shadow-[6px_6px_0_0_#fff] hover:bg-white hover:text-black hover:shadow-[6px_6px_0_0_#000] hover:translate-x-1 hover:-translate-y-1 transition-all"
             >
-              INITIALIZE SCAN
+              Audit My Code
             </Link>
           </div>
         </div>
@@ -170,7 +167,7 @@ export default function StackPage({ params }: { params: { stack: string } }) {
             scroll={false}
             className="inline-flex items-center justify-center bg-black text-white px-8 py-4 text-xs md:text-sm font-black uppercase tracking-widest border-[4px] border-black shadow-[8px_8px_0_0_#000] hover:bg-white hover:text-black hover:translate-x-1 hover:-translate-y-1 transition-all"
           >
-            REQUEST ACCESS
+            Join Waitlist
           </Link>
         </div>
       </div>

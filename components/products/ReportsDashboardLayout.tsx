@@ -27,7 +27,7 @@ export default function ReportsDashboardLayout({ product }: { product: ProductDa
         <div className="border-b-[6px] border-black pb-6 mb-8">
           <div className="flex flex-col md:flex-row justify-between items-start mb-6 gap-6">
             <div className="max-w-3xl">
-              <h2 className="text-sm font-black uppercase tracking-widest mb-4 border-b-[4px] border-black pb-2 text-black">CODEAUDIT.DEV // INTERNAL DOCUMENT</h2>
+              <h2 className="text-sm font-black uppercase tracking-widest mb-4 border-b-[4px] border-black pb-2 text-black">CodeAudit Document</h2>
               <h1 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mt-2 text-black">{product.h1}</h1>
             </div>
             <div className="text-right border-[4px] border-black p-4 bg-gray-100 flex-shrink-0 shadow-[4px_4px_0_0_#000]">
@@ -43,9 +43,9 @@ export default function ReportsDashboardLayout({ product }: { product: ProductDa
           </div>
         </div>
 
-        {/* Executive Summary */}
+        {/* Overview */}
         <div className="mb-10 border-[4px] border-black p-6 md:p-8 bg-gray-50 shadow-[6px_6px_0_0_#000]">
-          <h3 className="text-lg md:text-xl font-black uppercase text-black border-b-[4px] border-black pb-2 mb-4">1.0 EXECUTIVE SUMMARY</h3>
+          <h3 className="text-lg md:text-xl font-black uppercase text-black border-b-[4px] border-black pb-2 mb-4">1.0 Overview</h3>
           <div className="mt-4">
             <p className="text-xs md:text-sm leading-relaxed font-bold border-l-[4px] border-black pl-4 bg-white py-2 pr-4">
               {product.whatItDoes}
@@ -59,7 +59,7 @@ export default function ReportsDashboardLayout({ product }: { product: ProductDa
         {/* Features Table */}
         {product.features && product.features.length > 0 && (
           <div className="mb-10">
-            <h3 className="text-lg md:text-xl font-black uppercase text-black border-b-[4px] border-black pb-2 mb-4">2.0 FEATURE SPECIFICATION</h3>
+            <h3 className="text-lg md:text-xl font-black uppercase text-black border-b-[4px] border-black pb-2 mb-4">2.0 Features</h3>
             <div className="border-[4px] border-black shadow-[6px_6px_0_0_#000]">
               <div className="flex border-b-[4px] border-black bg-gray-200 font-black uppercase text-[10px] md:text-xs tracking-widest">
                 <div className="w-16 border-r-[4px] border-black p-3 flex items-center justify-center">REF</div>
@@ -109,7 +109,7 @@ export default function ReportsDashboardLayout({ product }: { product: ProductDa
           </div>
           
           <Link href="?waitlist=true" scroll={false} className="border-[6px] border-black bg-black text-white px-8 py-4 font-black uppercase text-xs md:text-sm hover:bg-white hover:text-black transition-none shadow-[8px_8px_0px_0px_rgba(255,0,0,1)] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] tracking-widest text-center">
-            JOIN_WAITLIST_PROTOCOL
+            Join Waitlist
           </Link>
         </div>
       </div>

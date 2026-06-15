@@ -45,7 +45,7 @@ export default function ArchitectureReviewLayout({ product }: Props) {
               {/* Description Block */}
               <div className="p-6 md:p-8 border-b-[4px] border-black bg-white">
                 <h2 className="text-lg md:text-xl font-black uppercase mb-4 text-black border-b-[4px] border-black pb-2">
-                  1.0 Specification
+                  Overview
                 </h2>
                 <p className="text-xs md:text-sm leading-relaxed font-bold border-l-[4px] border-black pl-4 bg-gray-100 py-2 pr-4">
                   {product.whatItDoes || 'A comprehensive tear-down of your application architecture. We evaluate scalability, security, performance bottlenecks, and technical debt. Delivered as a highly actionable engineering document.'}
@@ -55,7 +55,7 @@ export default function ArchitectureReviewLayout({ product }: Props) {
               {/* Features Block */}
               <div className="p-6 md:p-8 bg-white">
                 <h2 className="text-lg md:text-xl font-black uppercase mb-6 text-black border-b-[4px] border-black pb-2">
-                  2.0 Core Components
+                  What We Check For
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {(product.checksFor || [
@@ -83,7 +83,7 @@ export default function ArchitectureReviewLayout({ product }: Props) {
               {/* Info Block */}
               <div className="p-6 md:p-8 border-b-[4px] border-black flex-1 bg-gray-100">
                 <h2 className="text-lg md:text-xl font-black uppercase mb-6 text-black border-b-[4px] border-black pb-2">
-                  System Parameters
+                  Details
                 </h2>
                 <ul className="space-y-4 text-[10px] md:text-xs font-bold">
                   <li className="flex justify-between border-b-[2px] border-black pb-2">
@@ -104,7 +104,7 @@ export default function ArchitectureReviewLayout({ product }: Props) {
               {/* Action Block */}
               <div className="p-6 md:p-8 bg-yellow-300 mt-auto">
                 <h2 className="text-lg md:text-xl font-black uppercase mb-4 border-b-[4px] border-black pb-2 text-black">
-                  Execute Build
+                  Audit My Code
                 </h2>
                 <p className="text-[10px] md:text-xs font-bold mb-6 text-black leading-relaxed bg-white border-[4px] border-black p-2">
                   Initialize the waitlist sequence to secure your spot for the architecture review.

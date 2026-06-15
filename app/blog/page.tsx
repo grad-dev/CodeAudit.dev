@@ -16,7 +16,7 @@ export default function BlogIndex() {
       <div className="container px-4 mx-auto max-w-5xl">
         <div className="mb-12 border-b-[4px] border-black pb-8">
           <h1 className="text-2xl md:text-4xl font-black uppercase tracking-tighter mb-4 bg-yellow-300 inline-block px-4 py-2 border-[4px] border-black shadow-[4px_4px_0_0_#000]">
-            SYSTEM.LOG // BLOG
+            CodeAudit Blog
           </h1>
           <p className="text-xs md:text-sm border-l-[4px] border-black pl-4 bg-gray-100 py-2 font-bold shadow-[4px_4px_0_0_#000] mt-4">
             Insights on shipping secure, performant, and maintainable code.

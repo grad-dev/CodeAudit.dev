@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { Check } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'code audit tool pricing | CodeAudit.dev',
@@ -103,7 +104,7 @@ export default function PricingPage() {
                 <ul className="space-y-4 mb-8">
                   {tier.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="text-black mr-3 font-bold">{'>'}</span>
+                      <span className="text-black mr-3 font-bold mt-1"><Check className="w-4 h-4 stroke-[3]" /></span>
                       <span className="text-black">{feature}</span>
                     </li>
                   ))}
