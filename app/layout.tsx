@@ -16,7 +16,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://codeaudit.dev'),
-  title: "CodeAudit | Enterprise Code Security & Architecture Review",
+  title: "CodeAudit | Security & Architecture Audits for AI-Generated Code",
   description: "Stop shipping blind. Paste your GitHub repository and receive a detailed security, performance, and architecture audit in minutes.",
   icons: {
     icon: [
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "CodeAudit | Enterprise Code Security & Architecture Review",
+    title: "CodeAudit | Security & Architecture Audits for AI-Generated Code",
     description: "Stop shipping blind. Paste your GitHub repository and receive a detailed security, performance, and architecture audit in minutes.",
-    images: ["/logo.svg"],
+    images: ["/og-image.png"],
     url: 'https://codeaudit.dev',
     siteName: 'CodeAudit',
     locale: 'en_US',
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CodeAudit | Enterprise Code Security & Architecture Review",
+    title: "CodeAudit | Security & Architecture Audits for AI-Generated Code",
     description: "Stop shipping blind. Paste your GitHub repository and receive a detailed security, performance, and architecture audit in minutes.",
-    images: ["/logo.svg"],
-    creator: "@codeaudit",
+    images: ["/og-image.png"],
   },
 };
 
 import { Suspense } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export default function RootLayout({
   children,
@@ -57,6 +57,7 @@ export default function RootLayout({
         <link rel="icon" type="image/svg+xml" href="/logo.svg" sizes="any" />
       </head>
       <body className={inter.className}>
+        <GoogleAnalytics gaId="G-THYJ0VNJVE" />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

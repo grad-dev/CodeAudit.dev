@@ -20,7 +20,7 @@ const Footer = () => {
             <p className="text-white text-base font-bold leading-relaxed mb-8 border-l-[4px] border-blue-600 pl-4 bg-gray-900 py-2">
               Stop shipping blind. Security, performance, and architecture audits for modern codebases. Static analysis that catches what your team missed.
               <br/><br/>
-              <span className="text-yellow-400 uppercase tracking-widest text-[10px]">&gt;&gt; NO MERCY FOR BAD CODE.</span>
+              <span className="text-yellow-400 uppercase tracking-widest text-[10px]">&gt;&gt; AUDIT YOUR CODE. SHIP WITH CONFIDENCE.</span>
             </p>
             <div className="font-mono text-xs uppercase tracking-widest text-white space-y-3 bg-gray-900 p-4 border-[2px] border-white">
               <div className="flex justify-between border-b-[2px] border-gray-700 pb-2">

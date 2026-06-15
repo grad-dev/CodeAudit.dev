@@ -6,7 +6,7 @@ const defaultFaqs = [
   {
     id: "SEC-01",
     question: "Does CodeAudit access my private code?",
-    answer: "Only repositories you explicitly authorize are analyzed. Source code is never retained or stored after the analysis pipeline completes."
+    answer: "Only repositories you explicitly authorize are analyzed. We do not retain or store source code beyond the active analysis session."
   },
   {
     id: "PERF-01",

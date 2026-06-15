@@ -35,7 +35,7 @@ const DifferentApproach = () => {
             </div>
             <div className="text-white mb-2 bg-blue-600 inline-block px-2 py-0.5">$ codeaudit run ./src --strict</div>
             <div className="flex items-center gap-2 mb-1.5"><span className="text-blue-400 font-black">ℹ</span> Analyzing 42,012 LOC across 148 files...</div>
-            <div className="flex items-center gap-2 mb-1.5"><span className="text-green-500 font-black">✔</span> Scan completed in 0.04s</div>
+            <div className="flex items-center gap-2 mb-1.5"><span className="text-green-500 font-black">✔</span> Scan completed in 42.3s</div>
             <div className="flex items-center gap-2 mb-1.5"><span className="text-green-500 font-black">✔</span> 0 Critical Vulnerabilities detected</div>
             <div className="flex items-center gap-2 mt-3 text-white font-bold bg-black inline-block px-2 py-0.5">$ ready for deployment.</div>
           </div>
